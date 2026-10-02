@@ -2,18 +2,22 @@
    Everything here reads one number, --q2 (0 to 1 across the section), which scroll.css drives from a view timeline.
    The tree's own progress values and each stage's visibility are derived from it with calc(), so the four stages
    cross-fade at the quarter marks as the original's script did. Without scroll timelines --q2 stays 1: the tree is
-   drawn in full and the stages stack (see the static block at the end). */
+   drawn in full and the stages stack (see the static block at the end). Phones use the static layout and draw the tree as it scrolls in. */
 .sec-grow {
   --q2: 1;
   background: #111a15;
   color: #f5f5f7;
 }
-.stick {
+/* The tree's progress values, derived on whichever element carries the timeline: the pinned .stick on desktop, the tree itself on phones */
+.stick,
+.tree-wrap {
   --s: clamp(0, var(--q2) / 0.2, 1);
   --r: clamp(0, (var(--q2) - 0.18) / 0.22, 1);
   --t: clamp(0, (var(--q2) - 0.4) / 0.28, 1);
   --t2: clamp(0, (var(--q2) - 0.56) / 0.22, 1);
   --f: clamp(0, (var(--q2) - 0.76) / 0.2, 1);
+}
+.stick {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;

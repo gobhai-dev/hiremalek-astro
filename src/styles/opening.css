@@ -57,6 +57,8 @@
 /* Hero */
 .sec-hero {
   height: 100vh;
+  /* svh: the height with the browser toolbar showing, so the hero doesn't resize while the toolbar slides away */
+  height: 100svh;
   position: relative;
   background: transparent;
 }
@@ -217,5 +219,15 @@
     height: 80vmax;
     right: -37vmax;
     bottom: -29vmax;
+  }
+}
+
+/* Phones and touch screens: the color field is a plain background behind the opening instead of a pinned layer; it keeps only its slow drift */
+@media (hover: none), (pointer: coarse), (max-width: 860px) {
+  [data-color-field] {
+    position: absolute;
+    inset: 0;
+    height: auto;
+    margin: 0;
   }
 }

@@ -20,6 +20,10 @@
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: none; }
 }
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
 @keyframes grow-in {
   from { opacity: 0; transform: scale(0.94); }
   to { opacity: 1; transform: none; }
@@ -44,243 +48,75 @@
     animation-timeline: scroll(root);
   }
 
-  /* ===== How I work: the tree follows the reader's own scrolling, so it stays on with reduced motion, as on the original.
-     340vh gives about 240vh of travel for the four stages ===== */
-  .sec-grow {
-    height: 340vh;
-    padding: 0;
-    view-timeline: --grow block;
-  }
-  .stick {
-    position: sticky;
-    top: var(--navh);
-    height: calc(100vh - var(--navh));
-    animation: p-q2 linear both;
-    animation-timeline: --grow;
-    animation-range: contain 0% contain 100%;
-  }
-  .stage-col {
-    display: block;
-    height: min(460px, 100%);
-  }
-  /* Each stage (and its marker on the rail) is on between its own quarter marks, cross-fading over the boundary */
-  .stage,
-  .step {
-    --o: clamp(0, min((var(--q2) - var(--a)) * 20 + 0.5, (var(--b) - var(--q2)) * 20 + 0.5), 1);
-  }
-  [data-stage="0"] { --a: -1; --b: 0.25; }
-  [data-stage="1"] { --a: 0.25; --b: 0.5; }
-  [data-stage="2"] { --a: 0.5; --b: 0.75; }
-  [data-stage="3"] { --a: 0.75; --b: 2; }
-  .stage {
-    position: absolute;
-    inset: 0;
-    justify-content: center;
-    opacity: var(--o);
-    transform: translateY(calc((1 - var(--o)) * 30px));
-  }
-  /* Stage indicator: a vertical rail beside the stage text, the active stage drawn taller in copper */
-  .steps {
-    display: flex;
-    position: absolute;
-    left: -32px;
-    top: 50%;
-    transform: translateY(-50%);
-    flex-direction: column;
-    gap: 8px;
-  }
-  .step {
-    display: block;
-    width: 3px;
-    border-radius: 4px;
-    height: calc(24px + 28px * var(--o));
-    background: color-mix(in srgb, var(--glow) calc(var(--o) * 100%), rgba(245, 245, 247, 0.2));
-  }
-  /* Scroll cue, in light ink on the dark section; fades out once the last stage (fruit) arrives */
-  [data-grow-cue] {
-    position: absolute;
-    left: 50%;
-    bottom: calc(40px + var(--toolbar));
-    transform: translateX(-50%);
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    pointer-events: none;
-    white-space: nowrap;
-    font-family: var(--mono);
-    font-variant-ligatures: none;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    line-height: 1;
-    color: rgba(245, 245, 247, 0.72);
-    opacity: calc(1 - clamp(0, (var(--q2) - 0.75) * 20 + 0.5, 1));
-  }
-  [data-grow-cue]:after {
-    content: "";
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(rgba(245, 245, 247, 0.6), rgba(245, 245, 247, 0));
-  }
-  @container (max-width: 1000px) {
+  /* ===== Desktop (fine pointer, wider than 860px): the pinned, scroll-scrubbed sections =====
+     Phones get none of these. A pinned section whose contents move with the scroll is fragile on touch screens: the
+     address bar collapsing resizes the scroll area mid-gesture, and not every mobile engine runs scroll animations off
+     the main thread, so the pins shook. On phones the sections scroll normally (the static styles) with simple fade-ins. */
+  @media (hover: hover) and (pointer: fine) and (min-width: 861px) {
+    /* ===== How I work: the tree follows the reader's own scrolling, so it stays on with reduced motion, as on the original.
+       340vh gives about 240vh of travel for the four stages ===== */
+    .sec-grow {
+      height: 340vh;
+      padding: 0;
+      view-timeline: --grow block;
+    }
     .stick {
-      grid-template-rows: 42% 58%;
-      gap: 8px;
-    }
-  }
-  /* Phones: the stage text starts right under "How I work", the rail lines up with its first lines, and the cue is hidden */
-  @container (max-width: 640px) {
-    .stage {
-      justify-content: flex-start;
-      padding-top: 44px;
-      gap: 16px;
-    }
-    .steps {
-      top: 52px;
-      transform: none;
-      left: -12px;
-      gap: 6px;
-    }
-    .step {
-      width: 2px;
-      height: calc(18px + 18px * var(--o));
-    }
-    [data-grow-cue] {
-      display: none;
-    }
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    /* ===== Hero: pinned for 150vh, so the film shrinks into a rounded card over the first 50vh of scrolling ===== */
-    .sec-hero {
-      height: 150vh;
-      view-timeline: --hero block;
-    }
-    .hero-stick {
-      position: sticky;
-      top: 0;
-      height: 100vh;
-    }
-    .hero-media,
-    .hero-scrim,
-    .hero-copy,
-    .hero-cue,
-    .hero-skip,
-    .hero-pause {
-      animation-timing-function: linear;
-      animation-fill-mode: both;
-      animation-timeline: --hero;
-      animation-range: contain 0% contain 100%;
-    }
-    /* The film shrinks into a rounded card (the rounding is a clip-path, which stays off the paint path) */
-    .hero-media,
-    .hero-scrim {
-      animation-name: hero-shrink;
-      will-change: transform;
-    }
-    /* Headline fades out by 55% of the way and drifts up the whole way; the cues are gone by 25% */
-    .hero-copy {
-      animation-name: hero-copy-out;
-    }
-    .hero-cue,
-    .hero-skip,
-    .hero-pause {
-      animation-name: hero-cue-out;
-    }
-
-    /* ===== Color field: carried with the scroll across the opening, then faded out as the next section arrives ===== */
-    .opening {
-      view-timeline: --opening block;
-    }
-    [data-color-field] {
-      animation: fade-out linear both;
-      animation-timeline: --opening;
-      animation-range: exit 0% exit 60vh;
-    }
-    /* Each field keeps its slow ambient drift (transform, on time) and is also carried by the scroll (translate, on the timeline) */
-    /* (The animation shorthand resets the timeline, so the timeline and range come after it) */
-    [data-color-field]:before {
-      animation: mfloatA 22s ease-in-out infinite alternate, field-a linear both;
-    }
-    [data-color-field]:after {
-      animation: mfloatB 26s ease-in-out infinite alternate, field-b linear both;
-    }
-    [data-color-field]:before,
-    [data-color-field]:after {
-      animation-timeline: auto, --opening;
-      animation-range: normal, contain 0% contain 100%;
-    }
-
-    /* ===== Manifesto: pinned under the nav; 210vh gives about 110vh of travel across the three beats ===== */
-    .sec-manifesto {
-      height: 210vh;
-      view-timeline: --manifesto block;
-    }
-    .m-stick {
-      display: block;
       position: sticky;
       top: var(--navh);
       height: calc(100vh - var(--navh));
-      padding: 0;
-      overflow: hidden;
-    }
-    .beat,
-    .step-line,
-    .m-fill,
-    .m-bar:before,
-    .m-bar:after {
-      animation-timing-function: linear;
-      animation-fill-mode: both;
-      animation-timeline: --manifesto;
+      animation: p-q2 linear both;
+      animation-timeline: --grow;
       animation-range: contain 0% contain 100%;
     }
-    /* Beat 1 until 45%, beat 2 until 72%, then beat 3, cross-fading over about 6% at each boundary */
-    .beat {
+    .stage-col {
+      display: block;
+      height: min(460px, 100%);
+    }
+    /* Each stage (and its marker on the rail) is on between its own quarter marks, cross-fading over the boundary */
+    .stage,
+    .step {
+      --o: clamp(0, min((var(--q2) - var(--a)) * 20 + 0.5, (var(--b) - var(--q2)) * 20 + 0.5), 1);
+    }
+    [data-stage="0"] { --a: -1; --b: 0.25; }
+    [data-stage="1"] { --a: 0.25; --b: 0.5; }
+    [data-stage="2"] { --a: 0.5; --b: 0.75; }
+    [data-stage="3"] { --a: 0.75; --b: 2; }
+    .stage {
       position: absolute;
       inset: 0;
-      z-index: 1;
-      pointer-events: none;
+      justify-content: center;
+      opacity: var(--o);
+      transform: translateY(calc((1 - var(--o)) * 30px));
     }
-    .beat:nth-child(1) { animation-name: beat-1; }
-    .beat:nth-child(2) { animation-name: beat-2; }
-    .beat:nth-child(3) { animation-name: beat-3; }
-    /* The three opening lines light one after another (the first is lit from the start) */
-    .step-line:nth-child(1) { animation: none; }
-    .step-line:nth-child(2) { animation-name: line-2; }
-    .step-line:nth-child(3) { animation-name: line-3; }
-    /* Progress line with a "Scroll" cue above it, lifted above any bottom browser toolbar; the cue fades on the last beat */
-    .m-bar {
+    /* Stage indicator: a vertical rail beside the stage text, the active stage drawn taller in copper */
+    .steps {
+      display: flex;
+      position: absolute;
+      left: -32px;
+      top: 50%;
+      transform: translateY(-50%);
+      flex-direction: column;
+      gap: 8px;
+    }
+    .step {
       display: block;
+      width: 3px;
+      border-radius: 4px;
+      height: calc(24px + 28px * var(--o));
+      background: color-mix(in srgb, var(--glow) calc(var(--o) * 100%), rgba(245, 245, 247, 0.2));
+    }
+    /* Scroll cue, in light ink on the dark section; fades out once the last stage (fruit) arrives */
+    [data-grow-cue] {
       position: absolute;
-      z-index: 2;
+      left: 50%;
       bottom: calc(40px + var(--toolbar));
-      left: 50%;
-      width: 120px;
-      height: 2px;
-      border-radius: 2px;
-      background: rgba(29, 29, 31, 0.1);
       transform: translateX(-50%);
-    }
-    .m-fill {
-      height: 100%;
-      width: 100%;
-      border-radius: 2px;
-      background: #1d1d1f;
-      transform-origin: left;
-      animation-name: read-line;
-    }
-    .m-bar:before,
-    .m-bar:after {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      animation-name: m-cue-out;
-    }
-    .m-bar:before {
-      content: "Scroll";
-      bottom: 64px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      pointer-events: none;
       white-space: nowrap;
       font-family: var(--mono);
       font-variant-ligatures: none;
@@ -288,49 +124,228 @@
       font-weight: 500;
       letter-spacing: 0.02em;
       line-height: 1;
-      color: rgba(29, 29, 31, 0.72);
+      color: rgba(245, 245, 247, 0.72);
+      opacity: calc(1 - clamp(0, (var(--q2) - 0.75) * 20 + 0.5, 1));
     }
-    .m-bar:after {
+    [data-grow-cue]:after {
       content: "";
-      bottom: 14px;
       width: 1px;
       height: 40px;
-      background: linear-gradient(rgba(29, 29, 31, 0.6), rgba(29, 29, 31, 0));
+      background: linear-gradient(rgba(245, 245, 247, 0.6), rgba(245, 245, 247, 0));
     }
-    @container (max-width: 640px) {
-      .m-bar {
-        bottom: calc(64px + var(--toolbar));
+    @container (max-width: 1000px) {
+      .stick {
+        grid-template-rows: 42% 58%;
+        gap: 8px;
       }
     }
 
-    /* ===== Tend into Story. The original flew a script-positioned copy of the portrait from a slot under the Tend line
-       into the About column. CSS can't measure two layout positions, so the portrait instead settles into place as it
-       scrolls in, while the Tend line lifts away ===== */
-    .tend-text {
-      animation: tend-out linear both;
-      animation-timeline: view();
-      animation-range: exit 10% exit 90%;
-    }
-    .portrait {
-      view-timeline: --portrait block;
-      animation: land linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 100%;
-    }
-    /* Portrait headline: the first line rises out of a soft blur, the second follows a beat later */
-    /* (On the portrait's own timeline: it clips its contents, so a view() inside it would track the portrait, not the page) */
-    .portrait > .t-h2,
-    .portrait > .t-h2 span {
-      animation: headline-in linear both;
-      animation-timeline: --portrait;
-    }
-    .portrait > .t-h2 {
-      animation-range: cover 30% cover 45%;
-    }
-    .portrait > .t-h2 span {
-      animation-range: cover 36% cover 52%;
-    }
+    @media (prefers-reduced-motion: no-preference) {
+      /* ===== Hero: pinned for 150vh, so the film shrinks into a rounded card over the first 50vh of scrolling ===== */
+      .sec-hero {
+        height: 150vh;
+        view-timeline: --hero block;
+      }
+      .hero-stick {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+      }
+      .hero-media,
+      .hero-scrim,
+      .hero-copy,
+      .hero-cue,
+      .hero-skip,
+      .hero-pause {
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-timeline: --hero;
+        animation-range: contain 0% contain 100%;
+      }
+      /* The film shrinks into a rounded card (the rounding is a clip-path, which stays off the paint path) */
+      .hero-media,
+      .hero-scrim {
+        animation-name: hero-shrink;
+        will-change: transform;
+      }
+      /* Headline fades out by 55% of the way and drifts up the whole way; the cues are gone by 25% */
+      .hero-copy {
+        animation-name: hero-copy-out;
+      }
+      .hero-cue,
+      .hero-skip,
+      .hero-pause {
+        animation-name: hero-cue-out;
+      }
 
+      /* ===== Color field: carried with the scroll across the opening, then faded out as the next section arrives ===== */
+      .opening {
+        view-timeline: --opening block;
+      }
+      [data-color-field] {
+        animation: fade-out linear both;
+        animation-timeline: --opening;
+        animation-range: exit 0% exit 60vh;
+      }
+      /* Each field keeps its slow ambient drift (transform, on time) and is also carried by the scroll (translate, on the timeline) */
+      /* (The animation shorthand resets the timeline, so the timeline and range come after it) */
+      [data-color-field]:before {
+        animation: mfloatA 22s ease-in-out infinite alternate, field-a linear both;
+      }
+      [data-color-field]:after {
+        animation: mfloatB 26s ease-in-out infinite alternate, field-b linear both;
+      }
+      [data-color-field]:before,
+      [data-color-field]:after {
+        animation-timeline: auto, --opening;
+        animation-range: normal, contain 0% contain 100%;
+      }
+
+      /* ===== Manifesto: pinned under the nav; 210vh gives about 110vh of travel across the three beats ===== */
+      .sec-manifesto {
+        height: 210vh;
+        view-timeline: --manifesto block;
+      }
+      .m-stick {
+        display: block;
+        position: sticky;
+        top: var(--navh);
+        height: calc(100vh - var(--navh));
+        padding: 0;
+        overflow: hidden;
+      }
+      .beat,
+      .step-line,
+      .m-fill,
+      .m-bar:before,
+      .m-bar:after {
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-timeline: --manifesto;
+        animation-range: contain 0% contain 100%;
+      }
+      /* Beat 1 until 45%, beat 2 until 72%, then beat 3, cross-fading over about 6% at each boundary */
+      .beat {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .beat:nth-child(1) { animation-name: beat-1; }
+      .beat:nth-child(2) { animation-name: beat-2; }
+      .beat:nth-child(3) { animation-name: beat-3; }
+      /* The three opening lines light one after another (the first is lit from the start) */
+      .step-line:nth-child(1) { animation: none; }
+      .step-line:nth-child(2) { animation-name: line-2; }
+      .step-line:nth-child(3) { animation-name: line-3; }
+      /* Progress line with a "Scroll" cue above it, lifted above any bottom browser toolbar; the cue fades on the last beat */
+      .m-bar {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        bottom: calc(40px + var(--toolbar));
+        left: 50%;
+        width: 120px;
+        height: 2px;
+        border-radius: 2px;
+        background: rgba(29, 29, 31, 0.1);
+        transform: translateX(-50%);
+      }
+      .m-fill {
+        height: 100%;
+        width: 100%;
+        border-radius: 2px;
+        background: #1d1d1f;
+        transform-origin: left;
+        animation-name: read-line;
+      }
+      .m-bar:before,
+      .m-bar:after {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-name: m-cue-out;
+      }
+      .m-bar:before {
+        content: "Scroll";
+        bottom: 64px;
+        white-space: nowrap;
+        font-family: var(--mono);
+        font-variant-ligatures: none;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        line-height: 1;
+        color: rgba(29, 29, 31, 0.72);
+      }
+      .m-bar:after {
+        content: "";
+        bottom: 14px;
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(rgba(29, 29, 31, 0.6), rgba(29, 29, 31, 0));
+      }
+      @container (max-width: 640px) {
+        .m-bar {
+          bottom: calc(64px + var(--toolbar));
+        }
+      }
+
+      /* ===== Tend into Story. The original flew a script-positioned copy of the portrait from a slot under the Tend line
+         into the About column. CSS can't measure two layout positions, so the portrait instead settles into place as it
+         scrolls in, while the Tend line lifts away ===== */
+      .tend-text {
+        animation: tend-out linear both;
+        animation-timeline: view();
+        animation-range: exit 10% exit 90%;
+      }
+      .portrait {
+        view-timeline: --portrait block;
+        animation: land linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 100%;
+      }
+      /* Portrait headline: the first line rises out of a soft blur, the second follows a beat later */
+      /* (On the portrait's own timeline: it clips its contents, so a view() inside it would track the portrait, not the page) */
+      .portrait > .t-h2,
+      .portrait > .t-h2 span {
+        animation: headline-in linear both;
+        animation-timeline: --portrait;
+      }
+      .portrait > .t-h2 {
+        animation-range: cover 30% cover 45%;
+      }
+      .portrait > .t-h2 span {
+        animation-range: cover 36% cover 52%;
+      }
+
+    }
+  }
+
+  /* ===== Phones and touch screens: nothing pinned, nothing tied to position; blocks fade in as they arrive ===== */
+  @media (hover: none), (pointer: coarse), (max-width: 860px) {
+    @media (prefers-reduced-motion: no-preference) {
+      /* The headline fades in once on load; the film simply scrolls away */
+      .hero-copy {
+        animation: fade-up 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s both;
+      }
+      /* The tree draws itself once as it passes through view (stroke drawing only; nothing slides) */
+      .tree-wrap {
+        animation: p-q2 linear both;
+        animation-timeline: view();
+        animation-range: entry 10% cover 55%;
+      }
+      .beat,
+      .stage,
+      .portrait {
+        animation: fade-up linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry min(100%, 240px);
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
     /* ===== Reveals: rise into place over the first stretch of scrolling into view, staggered by a few pixels each ===== */
     .rv,
     .scale {
@@ -345,6 +360,12 @@
     .s2 { animation-range: entry 0% entry min(100%, 360px); }
     .s3 { animation-range: entry 0% entry min(100%, 400px); }
     .s4 { animation-range: entry 0% entry min(100%, 440px); }
+    @media (hover: none), (pointer: coarse), (max-width: 860px) {
+      .rv,
+      .scale {
+        animation-name: fade-up;
+      }
+    }
 
     /* ===== Stats count up as they scroll in ===== */
     .num-v {
