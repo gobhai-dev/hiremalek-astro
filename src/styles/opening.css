@@ -3,7 +3,7 @@
    The pinned, scroll-scrubbed version lives in scroll.css. */
 
 /* Floating color field: one shared layer behind the hero video and the manifesto, so there is no seam between them.
-   It takes no space (negative margin) and sits beneath all content. It is sticky inside .opening, so it stays on screen
+   It takes no space (negative margin) and sits beneath all content. scroll.css carries the two fields with the scroll. It is sticky inside .opening, so it stays on screen
    for exactly as long as the opening does and no script has to remove it afterwards. */
 .opening {
   position: relative;
@@ -34,7 +34,6 @@
     radial-gradient(circle at 66% 70%, rgba(184, 106, 75, 0.2), rgba(184, 106, 75, 0.09) 22%, rgba(184, 106, 75, 0.02) 40%, rgba(184, 106, 75, 0) 50%),
     radial-gradient(closest-side, rgba(224, 164, 90, 0.44), rgba(224, 164, 90, 0.32) 25%, rgba(224, 164, 90, 0.17) 50%, rgba(224, 164, 90, 0.06) 75%, rgba(224, 164, 90, 0));
   animation: mfloatA 22s ease-in-out infinite alternate;
-  translate: calc(var(--cf, 0) * 14vmax) calc(var(--cf, 0) * 18vh);
 }
 [data-color-field]:after {
   width: 64vmax;
@@ -43,7 +42,6 @@
   bottom: -27vmax;
   background: radial-gradient(closest-side, rgba(111, 138, 92, 0.34), rgba(129, 160, 120, 0.24) 25%, rgba(147, 181, 147, 0.12) 50%, rgba(147, 181, 147, 0.04) 75%, rgba(147, 181, 147, 0));
   animation: mfloatB 26s ease-in-out infinite alternate;
-  translate: calc(var(--cf, 0) * -14vmax) calc(var(--cf, 0) * -18vh);
 }
 @keyframes mfloatA {
   0% { transform: translate3d(0, 0, 0) scale(1); }

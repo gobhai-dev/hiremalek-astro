@@ -1,22 +1,20 @@
 /* ===== Scroll-driven layer =====
-   The original page ran a scroll listener that measured sections and wrote progress numbers (--h, --q, --s, --r, --t, --t2, --f, --p, --cf)
-   onto elements for the CSS to read. Here those numbers come from scroll and view timelines instead: each is a registered custom
-   property animated from 0 to 1 across a section, and the original calc()-based styling reads it unchanged.
+   The original page ran a scroll listener that measured sections and wrote progress numbers onto elements for the CSS to read.
+   Here scroll and view timelines drive the effects instead.
+
+   Rule for anything that moves while the page scrolls: animate transform, opacity (or clip-path) directly in keyframes.
+   The browser runs those on the compositor, in step with the finger. A registered custom property animated on a timeline
+   (and transforms calc()'d from it) updates on the main thread a frame behind the scroll, which shows as jitter in pinned
+   sections, worst on phones. Custom properties are only used where nothing slides: the tree's stroke drawing and the counters.
+
    Everything sits behind @supports, so browsers without scroll-driven animations get the static page from the section stylesheets. */
 
-@property --p { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --h { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --q { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --q2 { syntax: "<number>"; inherits: true; initial-value: 0; }
-@property --cf { syntax: "<number>"; inherits: true; initial-value: 0; }
 @property --n { syntax: "<integer>"; inherits: false; initial-value: 0; }
 
-@keyframes p-p { from { --p: 0; } to { --p: 1; } }
-@keyframes p-h { from { --h: 0; } to { --h: 1; } }
-@keyframes p-q { from { --q: 0; } to { --q: 1; } }
 @keyframes p-q2 { from { --q2: 0; } to { --q2: 1; } }
-@keyframes p-cf { from { --cf: 0; } to { --cf: 1; } }
 @keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes read-line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @keyframes count { from { --n: 0; } to { --n: var(--to); } }
 @keyframes rise {
   from { opacity: 0; transform: translateY(40px); }
@@ -27,8 +25,8 @@
   to { opacity: 1; transform: none; }
 }
 @keyframes land {
-  from { transform: translateY(-28%) scale(0.9); box-shadow: 0 50px 90px -40px rgba(0, 0, 0, 0.4); }
-  to { transform: none; box-shadow: none; }
+  from { transform: translateY(-28%) scale(0.9); }
+  to { transform: none; }
 }
 @keyframes tend-out {
   from { opacity: 1; transform: none; }
@@ -41,8 +39,8 @@
 
 @supports (animation-timeline: view()) {
   /* Reading line under the nav: the whole page's scroll progress */
-  .nav {
-    animation: p-p linear both;
+  .nav:after {
+    animation: read-line linear both;
     animation-timeline: scroll(root);
   }
 
@@ -164,24 +162,32 @@
       position: sticky;
       top: 0;
       height: 100vh;
-      animation: p-h linear both;
+    }
+    .hero-media,
+    .hero-scrim,
+    .hero-copy,
+    .hero-cue,
+    .hero-skip,
+    .hero-pause {
+      animation-timing-function: linear;
+      animation-fill-mode: both;
       animation-timeline: --hero;
       animation-range: contain 0% contain 100%;
     }
+    /* The film shrinks into a rounded card (the rounding is a clip-path, which stays off the paint path) */
     .hero-media,
     .hero-scrim {
-      transform: scale(calc(1 - var(--h) * 0.14));
-      border-radius: calc(var(--h) * 32px);
+      animation-name: hero-shrink;
       will-change: transform;
     }
+    /* Headline fades out by 55% of the way and drifts up the whole way; the cues are gone by 25% */
     .hero-copy {
-      opacity: calc(1 - var(--h) * 1.8);
-      transform: translateY(calc(var(--h) * -60px));
+      animation-name: hero-copy-out;
     }
     .hero-cue,
     .hero-skip,
     .hero-pause {
-      opacity: calc(1 - var(--h) * 4);
+      animation-name: hero-cue-out;
     }
 
     /* ===== Color field: carried with the scroll across the opening, then faded out as the next section arrives ===== */
@@ -189,9 +195,22 @@
       view-timeline: --opening block;
     }
     [data-color-field] {
-      animation: p-cf linear both, fade-out linear both;
-      animation-timeline: --opening, --opening;
-      animation-range: contain 0% contain 100%, exit 0% exit 60vh;
+      animation: fade-out linear both;
+      animation-timeline: --opening;
+      animation-range: exit 0% exit 60vh;
+    }
+    /* Each field keeps its slow ambient drift (transform, on time) and is also carried by the scroll (translate, on the timeline) */
+    /* (The animation shorthand resets the timeline, so the timeline and range come after it) */
+    [data-color-field]:before {
+      animation: mfloatA 22s ease-in-out infinite alternate, field-a linear both;
+    }
+    [data-color-field]:after {
+      animation: mfloatB 26s ease-in-out infinite alternate, field-b linear both;
+    }
+    [data-color-field]:before,
+    [data-color-field]:after {
+      animation-timeline: auto, --opening;
+      animation-range: normal, contain 0% contain 100%;
     }
 
     /* ===== Manifesto: pinned under the nav; 210vh gives about 110vh of travel across the three beats ===== */
@@ -206,32 +225,31 @@
       height: calc(100vh - var(--navh));
       padding: 0;
       overflow: hidden;
-      animation: p-q linear both;
+    }
+    .beat,
+    .step-line,
+    .m-fill,
+    .m-bar:before,
+    .m-bar:after {
+      animation-timing-function: linear;
+      animation-fill-mode: both;
       animation-timeline: --manifesto;
       animation-range: contain 0% contain 100%;
     }
-    /* Beat 1 until 45%, beat 2 until 72%, then beat 3, cross-fading at each boundary */
+    /* Beat 1 until 45%, beat 2 until 72%, then beat 3, cross-fading over about 6% at each boundary */
     .beat {
-      --o: clamp(0, min((var(--q) - var(--a)) * 16 + 0.5, (var(--b) - var(--q)) * 16 + 0.5), 1);
       position: absolute;
       inset: 0;
       z-index: 1;
-      opacity: var(--o);
-      transform: translateY(calc((1 - var(--o)) * 28px));
       pointer-events: none;
     }
-    .beat:nth-child(1) { --a: -1; --b: 0.45; }
-    .beat:nth-child(2) { --a: 0.45; --b: 0.72; }
-    .beat:nth-child(3) { --a: 0.72; --b: 2; }
-    /* The three opening lines light one after another */
-    .step-line {
-      --l: clamp(0, (var(--q) - var(--at)) * 16 + 0.5, 1);
-      opacity: calc(0.12 + 0.88 * var(--l));
-      transform: translateY(calc((1 - var(--l)) * 12px));
-    }
-    .step-line:nth-child(1) { --at: -1; }
-    .step-line:nth-child(2) { --at: 0.13; }
-    .step-line:nth-child(3) { --at: 0.26; }
+    .beat:nth-child(1) { animation-name: beat-1; }
+    .beat:nth-child(2) { animation-name: beat-2; }
+    .beat:nth-child(3) { animation-name: beat-3; }
+    /* The three opening lines light one after another (the first is lit from the start) */
+    .step-line:nth-child(1) { animation: none; }
+    .step-line:nth-child(2) { animation-name: line-2; }
+    .step-line:nth-child(3) { animation-name: line-3; }
     /* Progress line with a "Scroll" cue above it, lifted above any bottom browser toolbar; the cue fades on the last beat */
     .m-bar {
       display: block;
@@ -251,14 +269,14 @@
       border-radius: 2px;
       background: #1d1d1f;
       transform-origin: left;
-      transform: scaleX(var(--q));
+      animation-name: read-line;
     }
     .m-bar:before,
     .m-bar:after {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      opacity: clamp(0, calc((0.78 - var(--q)) * 5), 1);
+      animation-name: m-cue-out;
     }
     .m-bar:before {
       content: "Scroll";
@@ -335,4 +353,52 @@
       animation-range: entry 40% cover 45%;
     }
   }
+}
+
+/* Keyframes for the pinned opening (all transform / opacity / clip-path, so they run on the compositor) */
+@keyframes hero-shrink {
+  from { transform: none; clip-path: inset(0 round 0px); }
+  to { transform: scale(0.86); clip-path: inset(0 round 32px); }
+}
+@keyframes hero-copy-out {
+  0% { opacity: 1; transform: none; }
+  55.6% { opacity: 0; }
+  100% { opacity: 0; transform: translateY(-60px); }
+}
+@keyframes hero-cue-out {
+  0% { opacity: 1; }
+  25%, 100% { opacity: 0; }
+}
+@keyframes field-a {
+  from { translate: 0 0; }
+  to { translate: 14vmax 18vh; }
+}
+@keyframes field-b {
+  from { translate: 0 0; }
+  to { translate: -14vmax -18vh; }
+}
+@keyframes beat-1 {
+  0%, 41.9% { opacity: 1; transform: none; }
+  48.1%, 100% { opacity: 0; transform: translateY(28px); }
+}
+@keyframes beat-2 {
+  0%, 41.9% { opacity: 0; transform: translateY(28px); }
+  48.1%, 68.9% { opacity: 1; transform: none; }
+  75.1%, 100% { opacity: 0; transform: translateY(28px); }
+}
+@keyframes beat-3 {
+  0%, 68.9% { opacity: 0; transform: translateY(28px); }
+  75.1%, 100% { opacity: 1; transform: none; }
+}
+@keyframes line-2 {
+  0%, 9.9% { opacity: 0.12; transform: translateY(12px); }
+  16.1%, 100% { opacity: 1; transform: none; }
+}
+@keyframes line-3 {
+  0%, 22.9% { opacity: 0.12; transform: translateY(12px); }
+  29.1%, 100% { opacity: 1; transform: none; }
+}
+@keyframes m-cue-out {
+  0%, 58% { opacity: 1; }
+  78%, 100% { opacity: 0; }
 }

@@ -8,7 +8,7 @@
   -webkit-backdrop-filter: saturate(160%) blur(18px);
   border-bottom: 1px solid rgba(29, 29, 31, 0.1);
 }
-/* Reading line: a 2px copper line along the bottom edge that fills as the page is read. --p comes from a scroll timeline (scroll.css) */
+/* Reading line: a 2px copper line along the bottom edge that fills as the page is read (scroll.css animates it on the page's scroll timeline) */
 .nav:after {
   content: "";
   position: absolute;
@@ -18,7 +18,7 @@
   height: 2px;
   background: var(--accent);
   transform-origin: left;
-  transform: scaleX(var(--p, 0));
+  transform: scaleX(0);
   pointer-events: none;
   transition: opacity 0.3s;
 }
