@@ -1,0 +1,73 @@
+/* ===== Tend and Story ===== */
+.sec-tend {
+  padding: clamp(24px, 4cqi, 56px) 0 clamp(72px, 9cqi, 128px);
+  text-align: center;
+}
+.tend-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.tend-p {
+  max-width: 680px;
+}
+.sec-story {
+  padding: clamp(64px, 8cqi, 120px) 0;
+  background: #f2efe8;
+}
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(40px, 6cqi, 96px);
+  align-items: center;
+}
+/* About portrait: 3:4 crop, headline centered in the dark lower area, sized to the portrait's width */
+.portrait {
+  aspect-ratio: 3/4;
+  container-type: inline-size;
+}
+.portrait .ph-photo {
+  object-position: 50% 23%;
+}
+.portrait > .t-h2 {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  top: 71%;
+  bottom: 3%;
+  z-index: 2;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  color: #f3ece2;
+  font-size: 12cqi;
+  line-height: 1.08;
+}
+.portrait > .t-h2 span {
+  display: block;
+}
+@container (max-width: 1000px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
+/* About on tablet: portrait and bio stay side by side as on desktop, so the 3:4 portrait keeps a sensible size. Phones stack */
+@container (min-width: 641px) and (max-width: 1000px) {
+  #story .split {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: clamp(28px, 4.5cqi, 48px);
+  }
+  #story .stack {
+    gap: 20px;
+  }
+  #story .lead {
+    font-size: clamp(18px, 2.3cqi, 21px);
+  }
+}

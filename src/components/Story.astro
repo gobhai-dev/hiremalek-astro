@@ -1,0 +1,35 @@
+---
+import site from '../data/site.json';
+import Photo from './Photo.astro';
+---
+
+<section id="tend" class="sec-tend">
+  <div class="wrap">
+    <div class="tend-text">
+      <h2 class="t-h2">My job is telling <span class="serif accent">yours</span> that well.</h2>
+      <p class="lead muted tend-p">
+        I look after your brand's story so it can take root, reach everyone it's meant for, and become as common as the air we breathe.
+      </p>
+    </div>
+  </div>
+</section>
+<section id="story" class="sec-story">
+  <div class="wrap split">
+    <div class="ph g-portrait portrait">
+      <Photo img={site.portrait} sizes="(max-width: 640px) 90vw, 45vw" />
+      <h2 class="t-h2">I started as an artist. <span>I still think like one.</span></h2>
+    </div>
+    <div class="stack">
+      <div class="eyebrow rv">About</div>
+      <p class="lead rv s2">
+        I was on the founding teams at Charlotte's Web and AJNA BioSciences, I serve as interim VP Creative at Igniton, and I run my own studio, 35 FILM.
+      </p>
+      <p class="t-body rv s3">
+        At Charlotte's Web, I was there before there was a brand to market. Before there was a category. I helped shape its story, its message and its look
+        from the ground up. I was the entire marketing department until 2016, then built and led the team as the company grew and went public. 13 Clio awards
+        later, I still start every project the same way: with the story.
+      </p>
+      <div class="btn-row rv s4"><a href="#work" class="pill dark">See the work</a><a href="#contact" class="pill ghost">Get in touch</a></div>
+    </div>
+  </div>
+</section>

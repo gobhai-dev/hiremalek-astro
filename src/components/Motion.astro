@@ -1,0 +1,76 @@
+---
+// A phone showing six slides. The dots are radio buttons; each slide's arrows are labels for its neighbours' radios.
+// The rules generated below mark the slide, caption, dot and arrows that belong to the checked radio.
+import slides from '../data/slides.json';
+import Media from './Media.astro';
+
+const n = slides.length;
+const on = (sel: string) => slides.map((_, i) => `.sec-motion:has(#sl-${i}:checked) ${sel}[data-i="${i}"]`).join(',\n');
+const css = `
+${on('.slide')} { opacity: 1; visibility: visible; transform: none; transition: opacity 0.6s, transform 0.6s var(--ease); }
+${on('.cap')} { opacity: 1; visibility: visible; transition: opacity 0.4s; }
+${on('.arrow')} { visibility: visible; }
+${on('.dot')} { background: #1d1d1f; width: 24px; border-radius: 8px; }`;
+---
+
+<style is:inline set:html={css}></style>
+<section id="motion" class="sec-motion">
+  <div class="wrap split">
+    <div class="stack">
+      <div class="eyebrow rv">In motion</div>
+      <h2 class="t-h2 rv s1">Made for the screen in your hand.</h2>
+      <p class="lead muted rv s2">Video ads and graphics from recent campaigns, built to stop a thumb and hold a feeling.</p>
+      <div class="captions rv s3" aria-live="polite">
+        {
+          slides.map((s, i) => (
+            <div class="cap" data-i={i}>
+              <div class="slide-kind">
+                {s.kind} · {i + 1} of {n}
+              </div>
+              <h3 class="t-h3">{s.title}</h3>
+              <p class="t-body">{s.note}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="phone-stage scale">
+      <div class="arrows" aria-hidden="true">
+        {
+          slides.map((_, i) => (
+            <label class="arrow" data-i={i} for={`sl-${(i - 1 + n) % n}`}>
+              ‹
+            </label>
+          ))
+        }
+      </div>
+      <div class="phone-col">
+        <div class="phone">
+          <div class="island"></div>
+          <div class="screen">
+            {slides.map((s, i) => <Media item={s} class={`slide`} sizes="300px" data-i={i} />)}
+          </div>
+        </div>
+        <fieldset class="dots" style="border:0;margin:0;padding:0">
+          <legend class="sr-only">Slides</legend>
+          {
+            slides.map((s, i) => (
+              <label class="dot" data-i={i}>
+                <input type="radio" name="slide" id={`sl-${i}`} checked={i === 0} aria-label={`${i + 1} of ${n}: ${s.title}`} />
+              </label>
+            ))
+          }
+        </fieldset>
+      </div>
+      <div class="arrows" aria-hidden="true">
+        {
+          slides.map((_, i) => (
+            <label class="arrow" data-i={i} for={`sl-${(i + 1) % n}`}>
+              ›
+            </label>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

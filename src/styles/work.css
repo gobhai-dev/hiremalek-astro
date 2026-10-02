@@ -1,0 +1,489 @@
+/* ===== Work: six tabs, one spread per company =====
+   The tabs are radio buttons wrapped in labels, so arrow keys move between companies natively and no script tracks the selection.
+   Which panel shows is decided by :has(#wk-N:checked) rules generated in Work.astro. */
+.sec-work {
+  position: relative;
+  padding: clamp(96px, 11cqi, 160px) 0 0;
+  background: #faf8f3;
+}
+.work-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.wk {
+  --eo: cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 4.5cqi, 56px);
+}
+.wk-tabs {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 20px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.wk-tab {
+  position: relative;
+  border-top: 1px solid rgba(29, 29, 31, 0.16);
+  padding: 16px 0 4px;
+  min-height: 44px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.wk-tab input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  margin: 0;
+}
+.wk-tab:has(input:checked) {
+  border-top: 2px solid var(--accent);
+  padding-top: 15px;
+}
+.wk-num {
+  font-family: var(--mono);
+  font-variant-ligatures: none;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #8a8a8f;
+  transition: color 0.2s ease;
+}
+.wk-name {
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1.05;
+  color: #6e6e73;
+  transition: color 0.2s ease;
+}
+.wk-role {
+  font-size: 13px;
+  line-height: 1.35;
+  color: #6e6e73;
+}
+.wk-tab:has(input:checked) .wk-num {
+  color: var(--accent);
+}
+.wk-tab:has(input:checked) .wk-name {
+  color: #1d1d1f;
+}
+.wk-panel {
+  display: none;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(32px, 5cqi, 80px);
+  align-items: start;
+}
+@keyframes wkin {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.wk-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.wk-h {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(36px, 3.8cqi, 56px);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  margin: 0;
+}
+.wk-sum {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #4a4a4f;
+}
+.wk-res {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+}
+.wk-res li {
+  display: grid;
+  grid-template-columns: minmax(0, 9fr) minmax(0, 11fr);
+  gap: 16px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-top: 1px solid rgba(29, 29, 31, 0.1);
+}
+.wk-big {
+  font-family: var(--serif);
+  font-size: 30px;
+  line-height: 1;
+  color: var(--accent);
+}
+.wk-lab {
+  font-size: 15px;
+  line-height: 1.45;
+  color: #4a4a4f;
+}
+.wk-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.wk-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 0 28px;
+  border: 0;
+  border-radius: 999px;
+  background: #1d1d1f;
+  color: #faf8f3;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: transform 0.16s var(--eo), background-color 0.2s ease;
+}
+.wk-cta svg {
+  flex: 0 0 auto;
+  transition: transform 0.2s var(--eo);
+}
+.wk-cta:active {
+  transform: scale(0.97);
+}
+.wk-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #6e6e73;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.16s var(--eo);
+}
+.wk-next:active {
+  transform: scale(0.97);
+}
+.wk-media {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+.wk-piece {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  font: inherit;
+  color: #1d1d1f;
+  cursor: pointer;
+}
+.wk-img {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #e6dccb;
+  aspect-ratio: 16/10;
+}
+.wk-thumbs .wk-img {
+  aspect-ratio: 4/3;
+  border-radius: 18px;
+}
+.wk-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--eo);
+}
+.wk-tag {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  background: rgba(250, 248, 243, 0.92);
+  color: #1d1d1f;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-variant-ligatures: none;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+}
+.wk-thumbs .wk-tag {
+  left: 12px;
+  bottom: 12px;
+  padding: 6px 10px;
+  font-size: 11px;
+}
+.wk-pt {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.3;
+}
+.wk-pn {
+  font-size: 15px;
+  line-height: 1.45;
+  color: #6e6e73;
+  margin-top: -8px;
+}
+.wk-thumbs .wk-pt {
+  font-size: 15px;
+}
+.wk-thumbs .wk-pn {
+  font-size: 14px;
+}
+.wk-thumbs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+/* Company label for the phone card; hidden on desktop and tablet, where the tabs already name the company beside the spread */
+.wk-co {
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .wk-cta:hover {
+    background: var(--accent);
+  }
+  .wk-cta:hover svg {
+    transform: translateX(3px);
+  }
+  .wk-next:hover {
+    color: #1d1d1f;
+  }
+  .wk-tab:hover .wk-name {
+    color: #1d1d1f;
+  }
+  .wk-piece:hover .wk-img img {
+    transform: scale(1.03);
+  }
+}
+@container (max-width: 1000px) {
+  .wk-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 8px;
+  }
+}
+@container (max-width: 860px) {
+  .wk-panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@container (max-width: 560px) {
+  .wk-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 12px;
+  }
+  .wk-name {
+    font-size: 20px;
+  }
+  .wk-role {
+    font-size: 12px;
+  }
+  .wk-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ===== Work on phones: one story card per company.
+   The tabs become a single swipeable row of pills; the selected company is a filled ink pill.
+   The lead image becomes a tall 4:5 card: company name and role on a cream label top left, the type tag top right,
+   and the headline with the lead result over a soft dark fade at the bottom. ===== */
+@container (max-width: 640px) {
+  .wk {
+    gap: 18px;
+  }
+  .wk-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    margin: 0 calc(-1 * clamp(20px, 5cqi, 64px));
+    padding: 2px clamp(20px, 5cqi, 64px);
+    mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  }
+  .wk-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .wk-tab,
+  .wk-tab:has(input:checked) {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 7px;
+    min-height: 44px;
+    padding: 11px 16px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(29, 29, 31, 0.06);
+    transition: background-color 0.2s ease;
+  }
+  .wk-tab:has(input:checked) {
+    background: #1d1d1f;
+  }
+  .wk-role {
+    display: none;
+  }
+  .wk-num {
+    font-size: 10px;
+  }
+  .wk-name {
+    font-size: 18px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .wk-tab:has(input:checked) .wk-num {
+    color: var(--glow);
+  }
+  .wk-tab:has(input:checked) .wk-name {
+    color: #faf8f3;
+  }
+  .wk-panel {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 1fr auto auto auto;
+    row-gap: 0;
+  }
+  .wk-panel .wk-copy,
+  .wk-panel .wk-media {
+    display: contents;
+  }
+  .wk-sum,
+  .wk-thumbs,
+  .wk-hero .wk-pt,
+  .wk-hero .wk-pn {
+    display: none;
+  }
+  .wk-hero {
+    grid-row: 1/4;
+    grid-column: 1;
+  }
+  .wk-hero .wk-img {
+    aspect-ratio: 4/5;
+    border-radius: 20px;
+  }
+  .wk-hero .wk-img:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 16, 12, 0) 30%, rgba(10, 16, 12, 0.5) 58%, rgba(10, 16, 12, 0.9) 100%);
+    pointer-events: none;
+  }
+  .wk-co {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: absolute;
+    z-index: 2;
+    top: 14px;
+    left: 14px;
+    max-width: calc(100% - 120px);
+    padding: 9px 14px 10px;
+    border-radius: 14px;
+    background: rgba(250, 248, 243, 0.95);
+    color: #1d1d1f;
+    line-height: 1.05;
+    box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.35);
+  }
+  .wk-co b {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .wk-co small {
+    font-family: var(--mono);
+    font-variant-ligatures: none;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6e6e73;
+  }
+  .wk-hero .wk-tag {
+    top: 14px;
+    right: 14px;
+    left: auto;
+    bottom: auto;
+  }
+  .wk-h {
+    grid-row: 2;
+    grid-column: 1;
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+    color: #faf8f3;
+    font-size: clamp(28px, 8.4cqi, 36px);
+    padding: 0 20px 10px;
+  }
+  .wk-res {
+    grid-row: 3;
+    grid-column: 1;
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+    margin: 0;
+    padding: 0 20px 20px;
+  }
+  .wk-res li {
+    display: none;
+  }
+  .wk-res li:first-child {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 0;
+    border: 0;
+  }
+  .wk-res li:first-child .wk-big {
+    flex: 0 0 auto;
+    font-size: 22px;
+    color: #f2c27e;
+  }
+  .wk-res li:first-child .wk-lab {
+    font-size: 13px;
+    line-height: 1.4;
+    color: rgba(250, 248, 243, 0.86);
+  }
+  .wk-actions {
+    grid-row: 4;
+    grid-column: 1;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    margin: 16px 0 0;
+  }
+  .wk-cta {
+    width: 100%;
+    justify-content: center;
+  }
+  .wk-next {
+    align-self: center;
+  }
+}

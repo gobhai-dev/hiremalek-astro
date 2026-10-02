@@ -1,0 +1,24 @@
+---
+// One media box from the content data: a YouTube tile or a photo over its placeholder gradient
+import YouTube from './YouTube.astro';
+import Photo from './Photo.astro';
+
+interface Props {
+  item: { g?: string; yt?: string; title?: string; tag?: string; img?: { src: string; srcset?: string; alt: string } };
+  class?: string;
+  sizes?: string;
+  [attr: string]: unknown;
+}
+const { item, class: cls = '', sizes, ...rest } = Astro.props;
+---
+
+{
+  item.yt ? (
+    <YouTube id={item.yt} title={item.title} tag={item.tag} g={item.g} class={cls} {...rest} />
+  ) : (
+    <div class={`ph g-${item.g} ${cls}`} {...rest}>
+      {item.img && <Photo img={item.img} sizes={sizes} />}
+      {item.tag && <div class="tag">{item.tag}</div>}
+    </div>
+  )
+}

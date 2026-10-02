@@ -1,0 +1,19 @@
+---
+// A cover photo inside a placeholder box. Webflow served every image with sizes="100vw"; each use here says how wide it really renders
+interface Props {
+  img: { src: string; srcset?: string; alt: string; top?: boolean };
+  sizes?: string;
+  class?: string;
+}
+const { img, sizes = '100vw', class: cls = '' } = Astro.props;
+---
+
+<img
+  src={img.src}
+  srcset={img.srcset}
+  sizes={img.srcset ? sizes : undefined}
+  alt={img.alt}
+  loading="lazy"
+  decoding="async"
+  class:list={['ph-photo', { top: img.top }, cls]}
+/>

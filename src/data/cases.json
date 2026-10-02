@@ -1,0 +1,788 @@
+[
+  {
+    "id": "cw",
+    "blocks": [
+      {
+        "type": "moment",
+        "flip": false,
+        "media": {
+          "g": "earth",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb1d1ed7d3030239f010_PLANTING-THE-FIRST-CROP.jpg",
+            "alt": "Planting the first Charlotte's Web crop by hand",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb1d1ed7d3030239f010_PLANTING-THE-FIRST-CROP-p-500.jpg 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb1d1ed7d3030239f010_PLANTING-THE-FIRST-CROP-p-800.jpg 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb1d1ed7d3030239f010_PLANTING-THE-FIRST-CROP.jpg 866w"
+          }
+        },
+        "num": "01",
+        "heading": "The first crop.",
+        "text": "We planted it by hand. We capped the waiting list at 15,000 families because we couldn&#x27;t promise more."
+      },
+      {
+        "type": "moment",
+        "flip": true,
+        "media": {
+          "g": "clay",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5e92551ffe9924d6555e1_FAMILIES-ARRIVING-IN-COLORADO.jpg",
+            "alt": "Families arriving in Colorado for access to Charlotte's Web",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5e92551ffe9924d6555e1_FAMILIES-ARRIVING-IN-COLORADO-p-500.jpg 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5e92551ffe9924d6555e1_FAMILIES-ARRIVING-IN-COLORADO-p-800.jpg 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5e92551ffe9924d6555e1_FAMILIES-ARRIVING-IN-COLORADO-p-1080.jpg 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5e92551ffe9924d6555e1_FAMILIES-ARRIVING-IN-COLORADO.jpg 1500w"
+          }
+        },
+        "num": "02",
+        "heading": "The families.",
+        "text": "Some moved across the country for access. We helped carry their furniture in."
+      },
+      {
+        "type": "moment",
+        "flip": false,
+        "media": {
+          "g": "stone",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5e925c557cd2f5d1e738c_ON-THE-ROAD-WITH-PAIGE.jpg",
+            "alt": "On the road with Paige Figi, changing the law state by state",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5e925c557cd2f5d1e738c_ON-THE-ROAD-WITH-PAIGE-p-500.jpg 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5e925c557cd2f5d1e738c_ON-THE-ROAD-WITH-PAIGE-p-800.jpg 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5e925c557cd2f5d1e738c_ON-THE-ROAD-WITH-PAIGE-p-1080.jpg 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5e925c557cd2f5d1e738c_ON-THE-ROAD-WITH-PAIGE.jpg 1500w"
+          }
+        },
+        "num": "03",
+        "heading": "State by state.",
+        "text": "I traveled with Paige Figi, Charlotte&#x27;s mom, to change the law one legislature at a time."
+      },
+      {
+        "type": "moment",
+        "flip": true,
+        "media": {
+          "g": "gold",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5e94ee995f0cce6a3e2be_THE%20BRAND%20THE%20STORY%20BUILT.webp",
+            "alt": "The Charlotte's Web brand the story built",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5e94ee995f0cce6a3e2be_THE%20BRAND%20THE%20STORY%20BUILT-p-500.webp 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5e94ee995f0cce6a3e2be_THE%20BRAND%20THE%20STORY%20BUILT-p-800.webp 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5e94ee995f0cce6a3e2be_THE%20BRAND%20THE%20STORY%20BUILT-p-1080.webp 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5e94ee995f0cce6a3e2be_THE%20BRAND%20THE%20STORY%20BUILT-p-1600.webp 1600w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5e94ee995f0cce6a3e2be_THE%20BRAND%20THE%20STORY%20BUILT.webp 1920w"
+          }
+        },
+        "num": "04",
+        "heading": "What it became.",
+        "text": "The story we lived became the brand. Everything that followed grew from it."
+      },
+      {
+        "type": "work",
+        "label": "The work",
+        "gallery": [
+          {
+            "size": "wide",
+            "g": "stone",
+            "yt": "O3HW0lvnL-U",
+            "title": "Trust the Earth",
+            "tag": "Trust the Earth"
+          },
+          {
+            "size": "half",
+            "g": "gold",
+            "yt": "JIcvwlo_m_w",
+            "title": "Seed to Shelf",
+            "tag": "Seed to Shelf"
+          },
+          {
+            "size": "half",
+            "g": "moss",
+            "img": {
+              "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb1d28385fd73a2cf209_PRINT%20AND%20PACKAGING.webp",
+              "alt": "Charlotte's Web print and packaging",
+              "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb1d28385fd73a2cf209_PRINT%20AND%20PACKAGING-p-500.webp 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb1d28385fd73a2cf209_PRINT%20AND%20PACKAGING-p-800.webp 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb1d28385fd73a2cf209_PRINT%20AND%20PACKAGING-p-1080.webp 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb1d28385fd73a2cf209_PRINT%20AND%20PACKAGING.webp 1500w"
+            }
+          },
+          {
+            "size": "vert",
+            "g": "night",
+            "img": {
+              "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5f1f1112ddd132170050f_BRAND%20GRAPHIC02.webp",
+              "alt": "Charlotte's Web brand graphic",
+              "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5f1f1112ddd132170050f_BRAND%20GRAPHIC02-p-500.webp 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5f1f1112ddd132170050f_BRAND%20GRAPHIC02-p-800.webp 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5f1f1112ddd132170050f_BRAND%20GRAPHIC02-p-1080.webp 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5f1f1112ddd132170050f_BRAND%20GRAPHIC02.webp 1320w"
+            }
+          },
+          {
+            "size": "vert",
+            "g": "earth",
+            "yt": "UexRrbKM1yA",
+            "title": "Charlotte's Web social ad",
+            "tag": "Social ad"
+          },
+          {
+            "size": "vert",
+            "g": "clay",
+            "img": {
+              "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb1dcc215b39a00091b3_BRAND%20GRAPHIC.webp",
+              "alt": "Charlotte's Web brand graphic",
+              "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb1dcc215b39a00091b3_BRAND%20GRAPHIC-p-500.webp 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb1dcc215b39a00091b3_BRAND%20GRAPHIC-p-800.webp 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb1dcc215b39a00091b3_BRAND%20GRAPHIC-p-1080.webp 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb1dcc215b39a00091b3_BRAND%20GRAPHIC.webp 1320w"
+            }
+          }
+        ],
+        "rails": []
+      }
+    ],
+    "eyebrow": "Charlotte's Web · Founding team",
+    "heading": "The story came first.",
+    "lead": "Before there was a brand to market, there was a plant, a family, and more people asking for help than we could serve.",
+    "facts": [
+      {
+        "k": "The situation",
+        "v": "A small team, one plant, and a waiting list we had to cap at 15,000 families."
+      },
+      {
+        "k": "My role",
+        "v": "The entire marketing department until 2016, then I built and led the in-house creative and marketing team."
+      },
+      {
+        "k": "What happened",
+        "v": "$15M to $96M in annual revenue, a C$115M IPO in 2018, and #1 in food, drug and mass retail."
+      }
+    ],
+    "chips": [
+      "Grand Clio 2020, Trust the Earth",
+      "750M+ earned impressions",
+      "Largest ecommerce business in CBD",
+      "Adweek Best Cannabis Marketing Campaign 2019"
+    ]
+  },
+  {
+    "id": "ign",
+    "blocks": [
+      {
+        "type": "moment",
+        "flip": false,
+        "media": {
+          "g": "earth",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb2c17b9e5b0b6874b57_e5e73256dcea3d299d05b6d3b71f0013_Igniton-IDENTITY.jpg",
+            "alt": "Igniton brand identity",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb2c17b9e5b0b6874b57_e5e73256dcea3d299d05b6d3b71f0013_Igniton-IDENTITY-p-500.jpg 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb2c17b9e5b0b6874b57_e5e73256dcea3d299d05b6d3b71f0013_Igniton-IDENTITY-p-800.jpg 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb2c17b9e5b0b6874b57_e5e73256dcea3d299d05b6d3b71f0013_Igniton-IDENTITY-p-1080.jpg 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb2c17b9e5b0b6874b57_e5e73256dcea3d299d05b6d3b71f0013_Igniton-IDENTITY-p-1600.jpg 1600w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb2c17b9e5b0b6874b57_e5e73256dcea3d299d05b6d3b71f0013_Igniton-IDENTITY.jpg 1620w"
+          }
+        },
+        "num": "01",
+        "heading": "One brand.",
+        "text": "I designed the brand identity and launched the new website, so every channel speaks with one voice."
+      },
+      {
+        "type": "moment",
+        "flip": true,
+        "media": {
+          "g": "clay",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaa655475a527b078a1bf6_Igniton%20CAMPAIGN%20ACROSS%20CHANNELS.jpg",
+            "alt": "Igniton campaign across channels",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaa655475a527b078a1bf6_Igniton%20CAMPAIGN%20ACROSS%20CHANNELS-p-500.jpg 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaa655475a527b078a1bf6_Igniton%20CAMPAIGN%20ACROSS%20CHANNELS-p-800.jpg 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaa655475a527b078a1bf6_Igniton%20CAMPAIGN%20ACROSS%20CHANNELS-p-1080.jpg 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaa655475a527b078a1bf6_Igniton%20CAMPAIGN%20ACROSS%20CHANNELS-p-1600.jpg 1600w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaa655475a527b078a1bf6_Igniton%20CAMPAIGN%20ACROSS%20CHANNELS.jpg 1920w"
+          }
+        },
+        "num": "02",
+        "heading": "One team.",
+        "text": "Paid media, social, email and web moving under one creative direction instead of in parallel."
+      },
+      {
+        "type": "moment",
+        "flip": false,
+        "media": {
+          "g": "stone",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb284da205cdc842737c_CREATOR%20CONTENT.webp",
+            "alt": "Igniton creator content",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb284da205cdc842737c_CREATOR%20CONTENT-p-500.webp 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb284da205cdc842737c_CREATOR%20CONTENT-p-800.webp 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb284da205cdc842737c_CREATOR%20CONTENT-p-1080.webp 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb284da205cdc842737c_CREATOR%20CONTENT.webp 1672w"
+          }
+        },
+        "num": "03",
+        "heading": "Real voices.",
+        "text": "A creator program built from zero to 40+, giving the brand a steady stream of authentic content."
+      },
+      {
+        "type": "moment",
+        "flip": true,
+        "media": {
+          "g": "gold",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb2dae02f300d8d1d917_e5ed0d3bc2491db89d295e36dba94d14_igniton-AI-system.png",
+            "alt": "Igniton AI prompt library and workflow",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb2dae02f300d8d1d917_e5ed0d3bc2491db89d295e36dba94d14_igniton-AI-system-p-500.png 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb2dae02f300d8d1d917_e5ed0d3bc2491db89d295e36dba94d14_igniton-AI-system-p-800.png 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb2dae02f300d8d1d917_e5ed0d3bc2491db89d295e36dba94d14_igniton-AI-system.png 1080w"
+          }
+        },
+        "num": "04",
+        "heading": "A system that scales.",
+        "text": "An AI prompt library and framework, so the whole team produces on-brand work faster."
+      },
+      {
+        "type": "work",
+        "label": "The work",
+        "gallery": [
+          {
+            "size": "wide",
+            "g": "stone",
+            "yt": "8M90OTU4wLc",
+            "title": "Igniton launch",
+            "tag": "Igniton launch"
+          },
+          {
+            "size": "half",
+            "g": "gold",
+            "img": {
+              "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb2c17b9e5b0b6874b57_e5e73256dcea3d299d05b6d3b71f0013_Igniton-IDENTITY.jpg",
+              "alt": "Igniton brand identity",
+              "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb2c17b9e5b0b6874b57_e5e73256dcea3d299d05b6d3b71f0013_Igniton-IDENTITY-p-500.jpg 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb2c17b9e5b0b6874b57_e5e73256dcea3d299d05b6d3b71f0013_Igniton-IDENTITY-p-800.jpg 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb2c17b9e5b0b6874b57_e5e73256dcea3d299d05b6d3b71f0013_Igniton-IDENTITY-p-1080.jpg 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb2c17b9e5b0b6874b57_e5e73256dcea3d299d05b6d3b71f0013_Igniton-IDENTITY-p-1600.jpg 1600w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb2c17b9e5b0b6874b57_e5e73256dcea3d299d05b6d3b71f0013_Igniton-IDENTITY.jpg 1620w"
+            }
+          },
+          {
+            "size": "half",
+            "g": "moss",
+            "img": {
+              "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb24ff411c69e2092162_5ecbd9983cd284ff4606f3e6a428bde8_igniton_website.png",
+              "alt": "The Igniton website",
+              "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb24ff411c69e2092162_5ecbd9983cd284ff4606f3e6a428bde8_igniton_website-p-500.png 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb24ff411c69e2092162_5ecbd9983cd284ff4606f3e6a428bde8_igniton_website-p-800.png 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab5eb24ff411c69e2092162_5ecbd9983cd284ff4606f3e6a428bde8_igniton_website.png 1080w"
+            }
+          },
+          {
+            "size": "vert",
+            "g": "night",
+            "yt": "_8RpDExmQtU",
+            "title": "Igniton creator ad 1",
+            "tag": "Creator ad"
+          },
+          {
+            "size": "vert",
+            "g": "earth",
+            "yt": "9tcobq1Xs5w",
+            "title": "Igniton creator ad 2",
+            "tag": "Creator ad"
+          },
+          {
+            "size": "vert",
+            "g": "clay",
+            "yt": "f_jAYmRL2OQ",
+            "title": "Igniton creator ad 3",
+            "tag": "Creator ad"
+          }
+        ],
+        "rails": []
+      }
+    ],
+    "eyebrow": "Igniton · Interim VP Creative",
+    "heading": "Four agencies. One story.",
+    "lead": "Brand, website, creators and AI systems, brought together under one creative direction.",
+    "facts": [
+      {
+        "k": "The situation",
+        "v": "A growing brand with four agencies (paid media, social, email and web) that needed to move as one."
+      },
+      {
+        "k": "My role",
+        "v": "Interim VP Creative. I direct all four agencies under one creative direction."
+      },
+      {
+        "k": "What happened",
+        "v": "+326% order fulfillments and +29% customer retention year over year."
+      }
+    ],
+    "chips": [
+      "+326% order fulfillments",
+      "+29% customer retention",
+      "40+ creators",
+      "4 agencies aligned"
+    ]
+  },
+  {
+    "id": "ajna",
+    "blocks": [
+      {
+        "type": "moment",
+        "flip": false,
+        "media": {
+          "g": "earth",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae4000de4869afb506f4_5d4bd0408f4c4db7a97ae7b675483e35_Ajna_CAMPAIGN.webp",
+            "alt": "AJNA BioSciences campaign creative",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae4000de4869afb506f4_5d4bd0408f4c4db7a97ae7b675483e35_Ajna_CAMPAIGN-p-500.webp 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae4000de4869afb506f4_5d4bd0408f4c4db7a97ae7b675483e35_Ajna_CAMPAIGN-p-800.webp 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae4000de4869afb506f4_5d4bd0408f4c4db7a97ae7b675483e35_Ajna_CAMPAIGN-p-1080.webp 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae4000de4869afb506f4_5d4bd0408f4c4db7a97ae7b675483e35_Ajna_CAMPAIGN.webp 1672w"
+          }
+        },
+        "num": "01",
+        "heading": "The raise.",
+        "text": "Retail investor campaigns on WeFunder and StartEngine that raised $3.1M+, with under 1% of it spent on marketing."
+      },
+      {
+        "type": "moment",
+        "flip": true,
+        "media": {
+          "g": "clay",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae40512e1422b22af180_ajna-INVESTOR%20PRESENTATION.webp",
+            "alt": "AJNA BioSciences investor presentation",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae40512e1422b22af180_ajna-INVESTOR%20PRESENTATION-p-500.webp 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae40512e1422b22af180_ajna-INVESTOR%20PRESENTATION-p-800.webp 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae40512e1422b22af180_ajna-INVESTOR%20PRESENTATION-p-1080.webp 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae40512e1422b22af180_ajna-INVESTOR%20PRESENTATION-p-1600.webp 1600w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae40512e1422b22af180_ajna-INVESTOR%20PRESENTATION.webp 1672w"
+          }
+        },
+        "num": "02",
+        "heading": "The room.",
+        "text": "Investor presentations that supported $30M in growth funding."
+      },
+      {
+        "type": "work",
+        "label": "The work",
+        "gallery": [
+          {
+            "size": "wide",
+            "g": "stone",
+            "yt": "cGwKILuFVI8",
+            "title": "AJNA BioSciences investor video",
+            "tag": "Investor video"
+          },
+          {
+            "size": "half",
+            "g": "gold",
+            "img": {
+              "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab0452e867ffdf6e3df13_90fdea2f6e4d86bb2df79716f9f6daaa_ajna-CAMPAIGN%20GRAPHICS.webp",
+              "alt": "AJNA BioSciences campaign graphics",
+              "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab0452e867ffdf6e3df13_90fdea2f6e4d86bb2df79716f9f6daaa_ajna-CAMPAIGN%20GRAPHICS-p-500.webp 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab0452e867ffdf6e3df13_90fdea2f6e4d86bb2df79716f9f6daaa_ajna-CAMPAIGN%20GRAPHICS-p-800.webp 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab0452e867ffdf6e3df13_90fdea2f6e4d86bb2df79716f9f6daaa_ajna-CAMPAIGN%20GRAPHICS-p-1080.webp 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab0452e867ffdf6e3df13_90fdea2f6e4d86bb2df79716f9f6daaa_ajna-CAMPAIGN%20GRAPHICS.webp 1440w"
+            }
+          },
+          {
+            "size": "half",
+            "g": "moss",
+            "img": {
+              "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae40512e1422b22af180_ajna-INVESTOR%20PRESENTATION.webp",
+              "alt": "AJNA BioSciences investor presentation pages",
+              "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae40512e1422b22af180_ajna-INVESTOR%20PRESENTATION-p-500.webp 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae40512e1422b22af180_ajna-INVESTOR%20PRESENTATION-p-800.webp 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae40512e1422b22af180_ajna-INVESTOR%20PRESENTATION-p-1080.webp 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae40512e1422b22af180_ajna-INVESTOR%20PRESENTATION-p-1600.webp 1600w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaae40512e1422b22af180_ajna-INVESTOR%20PRESENTATION.webp 1672w"
+            }
+          }
+        ],
+        "rails": []
+      }
+    ],
+    "eyebrow": "AJNA BioSciences · Head of Creative and Communications",
+    "heading": "Making science something people want to invest in.",
+    "lead": "Investor storytelling for a botanical drug company, from the founding team onward.",
+    "facts": [
+      {
+        "k": "The situation",
+        "v": "A botanical drug company raising capital from institutions and everyday investors."
+      },
+      {
+        "k": "My role",
+        "v": "Founding team. I lead creative, marketing and communications."
+      },
+      {
+        "k": "What happened",
+        "v": "$3.1M+ raised from retail investors at under 1% marketing spend, and investor presentations supporting $30M in growth funding."
+      }
+    ],
+    "chips": [
+      "$3.1M+ raised",
+      "Under 1% marketing spend",
+      "$30M growth funding supported",
+      "Founding team"
+    ]
+  },
+  {
+    "id": "roc",
+    "blocks": [
+      {
+        "type": "moment",
+        "flip": false,
+        "media": {
+          "g": "earth",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab951695cb95fa8c96680_TESTIMONIAL%20STILL.jpg",
+            "alt": "Realm of Caring patient testimonial",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab951695cb95fa8c96680_TESTIMONIAL%20STILL-p-500.jpg 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab951695cb95fa8c96680_TESTIMONIAL%20STILL.jpg 720w"
+          }
+        },
+        "num": "01",
+        "heading": "The families.",
+        "text": "Patient video testimonials that let families tell their own stories."
+      },
+      {
+        "type": "moment",
+        "flip": true,
+        "media": {
+          "g": "clay",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab951771d830c8243cfd7_ADVOCACY.webp",
+            "alt": "Realm of Caring advocacy work",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab951771d830c8243cfd7_ADVOCACY-p-500.webp 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab951771d830c8243cfd7_ADVOCACY-p-800.webp 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab951771d830c8243cfd7_ADVOCACY-p-1080.webp 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab951771d830c8243cfd7_ADVOCACY-p-1600.webp 1600w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab951771d830c8243cfd7_ADVOCACY.webp 1672w"
+          }
+        },
+        "num": "02",
+        "heading": "The laws.",
+        "text": "Advocacy that helped advance CBD legalization in 22 states."
+      },
+      {
+        "type": "moment",
+        "flip": false,
+        "media": {
+          "g": "stone",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab951a32dec3d2e2bf434_RESEARCH.webp",
+            "alt": "Realm of Caring research partnership with Johns Hopkins",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab951a32dec3d2e2bf434_RESEARCH-p-500.webp 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab951a32dec3d2e2bf434_RESEARCH-p-800.webp 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab951a32dec3d2e2bf434_RESEARCH-p-1080.webp 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abab951a32dec3d2e2bf434_RESEARCH.webp 1672w"
+          }
+        },
+        "num": "03",
+        "heading": "The research.",
+        "text": "Fundraising that secured $1M+ for a Johns Hopkins research partnership."
+      },
+      {
+        "type": "work",
+        "label": "The work",
+        "gallery": [
+          {
+            "size": "wide",
+            "g": "stone",
+            "yt": "isfdW1IEgpg",
+            "title": "Realm of Caring: three families share their journeys",
+            "tag": "Three families' stories"
+          },
+          {
+            "size": "half",
+            "g": "gold",
+            "img": {
+              "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ababfee7dd10c37b97c9f4b_ADVOCACY%20MATERIALS.jpg",
+              "alt": "Realm of Caring advocacy materials",
+              "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ababfee7dd10c37b97c9f4b_ADVOCACY%20MATERIALS-p-500.jpg 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ababfee7dd10c37b97c9f4b_ADVOCACY%20MATERIALS-p-800.jpg 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ababfee7dd10c37b97c9f4b_ADVOCACY%20MATERIALS-p-1080.jpg 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ababfee7dd10c37b97c9f4b_ADVOCACY%20MATERIALS-p-1600.jpg 1600w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ababfee7dd10c37b97c9f4b_ADVOCACY%20MATERIALS.jpg 1920w"
+            }
+          },
+          {
+            "size": "half",
+            "g": "moss",
+            "img": {
+              "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ababfee10160575f91108bf_EVENT%20PHOTOGRAPHY.JPG",
+              "alt": "Realm of Caring event photography",
+              "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ababfee10160575f91108bf_EVENT%20PHOTOGRAPHY-p-500.jpg 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ababfee10160575f91108bf_EVENT%20PHOTOGRAPHY-p-800.jpg 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ababfee10160575f91108bf_EVENT%20PHOTOGRAPHY-p-1080.jpg 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ababfee10160575f91108bf_EVENT%20PHOTOGRAPHY-p-1600.jpg 1600w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ababfee10160575f91108bf_EVENT%20PHOTOGRAPHY.JPG 1920w"
+            }
+          }
+        ],
+        "rails": [
+          {
+            "label": "More stories",
+            "tiles": [
+              {
+                "g": "earth",
+                "yt": "f0-dlS0-pmE",
+                "title": "Realm of Caring story 1",
+                "caption": "<div class=\"tile-title\">Story 1</div>"
+              },
+              {
+                "g": "stone",
+                "yt": "g9ntLjdrYVk",
+                "title": "Realm of Caring story 2",
+                "caption": "<div class=\"tile-title\">Story 2</div>"
+              },
+              {
+                "g": "clay",
+                "yt": "Bt3-C5YrfkU",
+                "title": "Realm of Caring story 3",
+                "caption": "<div class=\"tile-title\">Story 3</div>"
+              },
+              {
+                "g": "moss",
+                "yt": "d3OAnsUqQiY",
+                "title": "Realm of Caring story 4",
+                "caption": "<div class=\"tile-title\">Story 4</div>"
+              },
+              {
+                "g": "gold",
+                "yt": "Hjj1auN3hMo",
+                "title": "Realm of Caring story 5",
+                "caption": "<div class=\"tile-title\">Story 5</div>"
+              },
+              {
+                "g": "earth",
+                "yt": "fh6xYbTk3CI",
+                "title": "Realm of Caring story 6",
+                "caption": "<div class=\"tile-title\">Story 6</div>"
+              },
+              {
+                "g": "stone",
+                "yt": "bGGKGrKVGrA",
+                "title": "Realm of Caring story 7",
+                "caption": "<div class=\"tile-title\">Story 7</div>"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "eyebrow": "Realm of Caring · Art Director",
+    "heading": "Telling health stories with care.",
+    "lead": "Patient stories and advocacy that helped change laws and fund research.",
+    "facts": [
+      {
+        "k": "The situation",
+        "v": "Patients and families whose stories could move lawmakers and researchers."
+      },
+      {
+        "k": "My role",
+        "v": "Art Director. I produced patient video testimonials and led fundraising."
+      },
+      {
+        "k": "What happened",
+        "v": "Advocacy that helped advance CBD legalization in 22 states, and $1M+ raised for a Johns Hopkins research partnership."
+      }
+    ],
+    "chips": [
+      "22 states",
+      "$1M+ for research",
+      "Johns Hopkins partnership"
+    ]
+  },
+  {
+    "id": "osw",
+    "blocks": [
+      {
+        "type": "moment",
+        "flip": false,
+        "media": {
+          "g": "earth",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abac86d16c410253236339e_CONFERENCE%20STAGE.jpg",
+            "alt": "IBEW Annual Conference stage, Washington, DC",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abac86d16c410253236339e_CONFERENCE%20STAGE-p-500.jpg 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abac86d16c410253236339e_CONFERENCE%20STAGE.jpg 720w"
+          }
+        },
+        "num": "01",
+        "heading": "The main stage.",
+        "text": "Co-produced the IBEW Annual Conference in Washington, DC in 2024, with President Biden attending."
+      },
+      {
+        "type": "moment",
+        "flip": true,
+        "media": {
+          "g": "clay",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abac86d1927ac26ce70338e_OswegoCreative_CAMPAIGN.jpg",
+            "alt": "Oswego Creative campaign work",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abac86d1927ac26ce70338e_OswegoCreative_CAMPAIGN-p-500.jpg 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abac86d1927ac26ce70338e_OswegoCreative_CAMPAIGN-p-800.jpg 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abac86d1927ac26ce70338e_OswegoCreative_CAMPAIGN-p-1080.jpg 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abac86d1927ac26ce70338e_OswegoCreative_CAMPAIGN-p-1600.jpg 1600w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abac86d1927ac26ce70338e_OswegoCreative_CAMPAIGN.jpg 1920w"
+          }
+        },
+        "num": "02",
+        "heading": "The campaigns.",
+        "text": "50+ national campaigns, with production workflows that cut costs 15%."
+      },
+      {
+        "type": "work",
+        "label": "The work",
+        "gallery": [
+          {
+            "size": "wide",
+            "g": "stone",
+            "yt": "TuEznO-7Gz4",
+            "title": "IBEW Annual Conference opening film",
+            "tag": "Conference opening film"
+          },
+          {
+            "size": "half",
+            "g": "gold",
+            "img": {
+              "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abacdb96c3319acf9da4b8f_STAGE%20AND%20EVENT%20PHOTOGRAPHY.webp",
+              "alt": "Oswego stage and event photography",
+              "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abacdb96c3319acf9da4b8f_STAGE%20AND%20EVENT%20PHOTOGRAPHY-p-500.webp 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abacdb96c3319acf9da4b8f_STAGE%20AND%20EVENT%20PHOTOGRAPHY-p-800.webp 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abacdb96c3319acf9da4b8f_STAGE%20AND%20EVENT%20PHOTOGRAPHY-p-1080.webp 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abacdb96c3319acf9da4b8f_STAGE%20AND%20EVENT%20PHOTOGRAPHY.webp 1920w"
+            }
+          },
+          {
+            "size": "half",
+            "g": "moss",
+            "img": {
+              "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abacd9c0baa316f3d6f9fa7_55dffd76831c2d8573b3221faa836ce9_CAMPAIGN%20CREATIVE.jpg",
+              "alt": "Oswego campaign creative",
+              "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abacd9c0baa316f3d6f9fa7_55dffd76831c2d8573b3221faa836ce9_CAMPAIGN%20CREATIVE-p-500.jpg 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abacd9c0baa316f3d6f9fa7_55dffd76831c2d8573b3221faa836ce9_CAMPAIGN%20CREATIVE-p-800.jpg 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abacd9c0baa316f3d6f9fa7_55dffd76831c2d8573b3221faa836ce9_CAMPAIGN%20CREATIVE-p-1080.jpg 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abacd9c0baa316f3d6f9fa7_55dffd76831c2d8573b3221faa836ce9_CAMPAIGN%20CREATIVE-p-1600.jpg 1600w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abacd9c0baa316f3d6f9fa7_55dffd76831c2d8573b3221faa836ce9_CAMPAIGN%20CREATIVE-p-2000.jpg 2000w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abacd9c0baa316f3d6f9fa7_55dffd76831c2d8573b3221faa836ce9_CAMPAIGN%20CREATIVE.jpg 2400w"
+            }
+          }
+        ],
+        "rails": [
+          {
+            "label": "More films",
+            "tiles": [
+              {
+                "g": "earth",
+                "yt": "5hpmH5K3uco",
+                "title": "2023 Journeyman of the Year",
+                "caption": "<div class=\"tile-title\">2023 Journeyman of the Year</div>"
+              },
+              {
+                "g": "stone",
+                "yt": "7_7YjbVK93c",
+                "title": "Union Sportsmen’s Alliance 1st BBQ Bash & Competition",
+                "caption": "<div class=\"tile-title\">Union Sportsmen’s Alliance 1st BBQ Bash &amp; Competition</div>"
+              },
+              {
+                "g": "clay",
+                "yt": "H3aM-g7D0R4",
+                "title": "Journal Squared",
+                "caption": "<div class=\"tile-title\">Journal Squared</div>"
+              },
+              {
+                "g": "moss",
+                "yt": "USF3kt1NQqg",
+                "title": "2024 Journeyman of the Year",
+                "caption": "<div class=\"tile-title\">2024 Journeyman of the Year</div>"
+              },
+              {
+                "g": "gold",
+                "yt": "d0BEPbQ3LiQ",
+                "title": "Linea at the Line",
+                "caption": "<div class=\"tile-title\">Linea at the Line</div>"
+              },
+              {
+                "g": "earth",
+                "yt": "RKeLyVMXps0",
+                "title": "Minot Hospital",
+                "caption": "<div class=\"tile-title\">Minot Hospital</div>"
+              },
+              {
+                "g": "stone",
+                "yt": "3UlwuCeqjxc",
+                "title": "The Ultium3",
+                "caption": "<div class=\"tile-title\">The Ultium3</div>"
+              },
+              {
+                "g": "clay",
+                "yt": "mq4FmNJlFc0",
+                "title": "Chicago Auto Show",
+                "caption": "<div class=\"tile-title\">Chicago Auto Show</div>"
+              },
+              {
+                "g": "moss",
+                "yt": "TF-YBAFfRb4",
+                "title": "Pittsburgh International Airport",
+                "caption": "<div class=\"tile-title\">Pittsburgh International Airport</div>"
+              },
+              {
+                "g": "gold",
+                "yt": "3n7ptMSTefc",
+                "title": "Denver International Airport",
+                "caption": "<div class=\"tile-title\">Denver International Airport</div>"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "eyebrow": "Oswego Creative · Senior Producer",
+    "heading": "Live, at national scale.",
+    "lead": "National campaigns and live events, including the IBEW's annual conference in Washington, DC.",
+    "facts": [
+      {
+        "k": "The situation",
+        "v": "National campaigns and live events where there is no second take."
+      },
+      {
+        "k": "My role",
+        "v": "Senior Producer."
+      },
+      {
+        "k": "What happened",
+        "v": "Co-produced the 2024 IBEW Annual Conference, delivered 50+ national campaigns, and built workflows that cut production costs 15%."
+      }
+    ],
+    "chips": [
+      "50+ national campaigns",
+      "15% lower production costs",
+      "IBEW Annual Conference 2024"
+    ]
+  },
+  {
+    "id": "film",
+    "blocks": [
+      {
+        "type": "moment",
+        "flip": false,
+        "media": {
+          "g": "earth",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abae7cb7224acd0131459f9_35Film-FILM%20STILL.webp",
+            "alt": "Still from a 35 FILM production",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abae7cb7224acd0131459f9_35Film-FILM%20STILL-p-500.webp 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abae7cb7224acd0131459f9_35Film-FILM%20STILL-p-800.webp 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abae7cb7224acd0131459f9_35Film-FILM%20STILL-p-1080.webp 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abae7cb7224acd0131459f9_35Film-FILM%20STILL.webp 1672w"
+          }
+        },
+        "num": "01",
+        "heading": "The films.",
+        "text": "God&#x27;s Plant, Our Place on Earth and Growing to Heal: stories about plants, healing and the families who fought for access."
+      },
+      {
+        "type": "moment",
+        "flip": true,
+        "media": {
+          "g": "clay",
+          "img": {
+            "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaeb42d2432f857063d2bc_61b3c0eaa4acd38f412fa16f2090d860_35%20film%20CLIENT%20PROJECT.webp",
+            "alt": "35 FILM client project",
+            "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaeb42d2432f857063d2bc_61b3c0eaa4acd38f412fa16f2090d860_35%20film%20CLIENT%20PROJECT-p-500.webp 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaeb42d2432f857063d2bc_61b3c0eaa4acd38f412fa16f2090d860_35%20film%20CLIENT%20PROJECT-p-800.webp 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaeb42d2432f857063d2bc_61b3c0eaa4acd38f412fa16f2090d860_35%20film%20CLIENT%20PROJECT-p-1080.webp 1080w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaeb42d2432f857063d2bc_61b3c0eaa4acd38f412fa16f2090d860_35%20film%20CLIENT%20PROJECT-p-1600.webp 1600w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaeb42d2432f857063d2bc_61b3c0eaa4acd38f412fa16f2090d860_35%20film%20CLIENT%20PROJECT.webp 1920w"
+          }
+        },
+        "num": "02",
+        "heading": "Client work.",
+        "text": "Films and photography for brands and organizations."
+      },
+      {
+        "type": "work",
+        "label": "The work",
+        "gallery": [
+          {
+            "size": "wide",
+            "g": "stone",
+            "yt": "A6DkW5UXpmo",
+            "title": "Klein Tools brand film",
+            "tag": "Klein Tools brand film"
+          },
+          {
+            "size": "half",
+            "g": "gold",
+            "yt": "HmE5dw1h7kM",
+            "title": "Klein Tools ModBox product film",
+            "tag": "Klein Tools ModBox"
+          },
+          {
+            "size": "half",
+            "g": "moss",
+            "yt": "s3IdgQVQXqY",
+            "title": "Lightwave Logic brand film",
+            "tag": "Lightwave Logic"
+          },
+          {
+            "size": "vert",
+            "g": "night",
+            "yt": "JA_c0xvIB_4",
+            "title": "Charlotte's Web Sleep Gummies, AI generated ad",
+            "tag": "Charlotte's Web Sleep Gummies · AI generated ad"
+          },
+          {
+            "size": "vert",
+            "g": "earth",
+            "yt": "xHufLP1epTU",
+            "title": "Igniton: IgniCognition, AI generated ad",
+            "tag": "Igniton: IgniCognition · AI generated ad"
+          },
+          {
+            "size": "vert",
+            "g": "clay",
+            "yt": "4RK-gCVr3XY",
+            "title": "Igniton: IgniREM Sleep, AI generated ad",
+            "tag": "Igniton: IgniREM Sleep · AI generated ad"
+          }
+        ],
+        "rails": []
+      }
+    ],
+    "eyebrow": "35 FILM · Founder, est. 2014",
+    "heading": "My own studio.",
+    "lead": "Documentaries, client films and photography, and now AI-assisted ad production.",
+    "facts": [
+      {
+        "k": "The studio",
+        "v": "An independent studio I founded in 2014."
+      },
+      {
+        "k": "The films",
+        "v": "A documentary trilogy co-directed with Jeremy Seifert, including God&#x27;s Plant (Mountainfilm, 2021)."
+      },
+      {
+        "k": "The work",
+        "v": "Client films, photography, and AI-assisted ads made with Higgsfield."
+      }
+    ],
+    "chips": [
+      "Mountainfilm 2021",
+      "Founded 2014"
+    ]
+  }
+]

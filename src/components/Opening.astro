@@ -1,0 +1,43 @@
+---
+// Hero film and manifesto, sharing one color field behind them
+import site from '../data/site.json';
+const { poster, sources } = site.heroVideo;
+const type = (u: string) => (u.endsWith('.webm') ? 'video/webm' : 'video/mp4');
+---
+
+<div class="opening">
+  <div data-color-field aria-hidden="true"></div>
+  <section id="top" class="sec-hero">
+    <div class="hero-stick">
+      <div class="hero-media" style={`background-image:url("${poster}")`}>
+        {/* Sources carry a media query, so readers who prefer reduced motion get the poster only and the film is never downloaded */}
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" poster={poster} aria-hidden="true">
+          {sources.map((s) => <source src={s} type={type(s)} media="(prefers-reduced-motion: no-preference)" />)}
+        </video>
+      </div>
+      <div class="hero-scrim"></div>
+      <div class="hero-copy">
+        <h1 class="t-h1 hero-h">Everything you believe in was once a <span class="serif">story</span>.</h1>
+        <div class="hero-name">Malek Asfeer · Creative director and filmmaker</div>
+      </div>
+      <div class="hero-cue" aria-hidden="true">
+        <div>Scroll</div>
+        <div class="scroll-line"></div>
+      </div>
+      <button type="button" class="hero-pause" hidden aria-pressed="false">Pause film</button>
+      <a class="hero-skip" href="#work">See the work ↓</a>
+    </div>
+  </section>
+  <section id="manifesto" class="sec-manifesto">
+    <div class="m-stick">
+      <div class="beat">
+        <div class="beat-line step-line">The money in your pocket.</div>
+        <div class="beat-line step-line">The borders on a map.</div>
+        <div class="beat-line step-line">The brands that became verbs.</div>
+      </div>
+      <div class="beat"><div class="beat-line">Each one began as an idea in a single person's head.</div></div>
+      <div class="beat"><div class="beat-line">A story told well enough that others could feel it too.</div></div>
+      <div class="m-bar" aria-hidden="true"><div class="m-fill"></div></div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,22 @@
+---
+const links = [
+  ['story', 'Story'],
+  ['work', 'Work'],
+  ['grow', 'How I work'],
+  ['motion', 'In motion'],
+  ['films', 'Films'],
+];
+---
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">Malek Asfeer</a>
+    <nav class="navlinks" id="site-menu" aria-label="Sections">
+      {links.map(([id, label]) => <a href={`#${id}`}>{label}</a>)}
+      <a class="nav-contact" href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="pill dark sm">Contact</a>
+    <a href="#site-menu" class="menu-btn menu-open" aria-label="Open menu"><span>Menu</span><span class="menu-icon" aria-hidden="true"></span></a>
+    <a href="#nav" class="menu-btn menu-close" aria-label="Close menu"><span>Close</span><span class="menu-icon" aria-hidden="true"></span></a>
+  </div>
+</header>

@@ -1,0 +1,34 @@
+---
+import { treeSvg } from '../lib/tree';
+const stages = [
+  ['Story is the', 'seed', "Every brand begins as something small and invisible: a belief about why it should exist. Before a single ad, I look for that seed, the human truth everything else will grow from. Plant the wrong seed and no amount of spend will grow the right tree."],
+  ['Systems are the', 'roots', 'Roots are the part no one sees, and the reason a tree survives the storm. Creator programs, agency workflows and production systems let a story keep drawing nourishment long after launch day.'],
+  ['Strategy is the', 'trunk', 'Strategy carries the story upward. It decides which branches to grow, which people to reach and which channels bear the weight. A strong trunk is why a tree grows tall instead of wide and weak.'],
+  ['Results are the', 'fruit', "Fruit is the part everyone sees, and the last thing to arrive. Awareness, growth, loyalty and capital raised only ripen when the seed, the roots and the trunk beneath them are healthy. That's why I never start with the fruit."],
+];
+---
+
+<section id="grow" class="sec-grow">
+  <div class="wrap stick">
+    <div class="tree-wrap" set:html={treeSvg()} />
+    <div class="stage-col">
+      <div class="stage-top">
+        <div class="eyebrow">How I work</div>
+        <div class="steps" aria-hidden="true">
+          {stages.map((_, i) => <div class="step" data-stage={i} />)}
+        </div>
+      </div>
+      {
+        stages.map(([a, b, text], i) => (
+          <div class="stage" data-stage={i}>
+            <h2 class="t-h2">
+              {a} <span class="serif glowtxt">{b}</span>.
+            </h2>
+            <p class="lead">{text}</p>
+          </div>
+        ))
+      }
+    </div>
+    <div data-grow-cue aria-hidden="true">Scroll</div>
+  </div>
+</section>

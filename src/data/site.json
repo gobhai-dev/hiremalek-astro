@@ -1,0 +1,15 @@
+{
+  "heroVideo": {
+    "poster": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c%2F6ab605cd603640f43c148513_hero02_poster.0000000.jpg",
+    "sources": [
+      "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c%2F6ab605cd603640f43c148513_hero02_mp4.mp4",
+      "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c%2F6ab605cd603640f43c148513_hero02_webm.webm"
+    ]
+  },
+  "portrait": {
+    "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab56e3d891cba9155a7a25e_Portrait_of_Malek.webp",
+    "alt": "Portrait of Malek Asfeer",
+    "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab56e3d891cba9155a7a25e_Portrait_of_Malek-p-500.webp 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab56e3d891cba9155a7a25e_Portrait_of_Malek-p-800.webp 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6ab56e3d891cba9155a7a25e_Portrait_of_Malek.webp 1080w",
+    "top": true
+  }
+}

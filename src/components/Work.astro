@@ -1,0 +1,89 @@
+---
+// Six companies as tabs. Each tab is a label wrapping a radio button; the rules generated below show the panel whose
+// radio is checked. Story links are invoker buttons that open that company's case-study dialog, with no script.
+import work from '../data/work.json';
+
+const panelRules = work.map((_, i) => `.wk:has(#wk-${i}:checked) .wk-panel[data-i="${i}"]`).join(',\n');
+const css = `${panelRules} { display: grid; animation: wkin 0.5s var(--eo) both; }`;
+const arrow = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+const small = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>';
+---
+
+<style is:inline set:html={css}></style>
+<section id="work" class="sec-work">
+  <div class="wrap work-inner">
+    <div class="head">
+      <div class="eyebrow rv">The work</div>
+      <h2 class="t-h2 rv s1">Selected work.</h2>
+    </div>
+    <div class="wk">
+      <fieldset class="wk-tabs">
+        <legend class="sr-only">Companies</legend>
+        {
+          work.map((w, i) => (
+            <label class="wk-tab">
+              <input type="radio" name="wk" id={`wk-${i}`} checked={i === 0} />
+              <span class="wk-num">{w.num}</span>
+              <span class="wk-name">{w.name}</span>
+              <span class="wk-role">{w.role}</span>
+            </label>
+          ))
+        }
+      </fieldset>
+      {
+        work.map((w, i) => (
+          <article class="wk-panel" data-i={i} aria-label={w.name}>
+            <div class="wk-copy">
+              <h3 class="wk-h">{w.heading}</h3>
+              <p class="wk-sum">{w.summary}</p>
+              <ul class="wk-res">
+                {w.results.map((r) => (
+                  <li>
+                    <span class="wk-big">{r.big}</span>
+                    <span class="wk-lab">{r.label}</span>
+                  </li>
+                ))}
+              </ul>
+              <div class="wk-actions">
+                <button type="button" class="wk-cta" commandfor={`case-${w.case}`} command="show-modal">
+                  {w.cta}
+                  <Fragment set:html={arrow} />
+                </button>
+                <label class="wk-next" for={`wk-${(i + 1) % work.length}`}>
+                  {w.next}
+                  <Fragment set:html={small} />
+                </label>
+              </div>
+            </div>
+            <div class="wk-media">
+              <button type="button" class="wk-piece wk-hero" commandfor={`case-${w.case}`} command="show-modal">
+                <span class="wk-img">
+                  <img src={w.hero.img.src} alt={w.hero.img.alt} loading="lazy" decoding="async" />
+                  <span class="wk-co" aria-hidden="true">
+                    <b>{w.name}</b>
+                    <small>{w.role}</small>
+                  </span>
+                  <span class="wk-tag">{w.hero.tag}</span>
+                </span>
+                <span class="wk-pt">{w.hero.title}</span>
+                <span class="wk-pn">{w.hero.note}</span>
+              </button>
+              <div class="wk-thumbs">
+                {w.thumbs.map((t) => (
+                  <button type="button" class="wk-piece" commandfor={`case-${w.case}`} command="show-modal">
+                    <span class="wk-img">
+                      <img src={t.img.src} alt={t.img.alt} loading="lazy" decoding="async" />
+                      <span class="wk-tag">{t.tag}</span>
+                    </span>
+                    <span class="wk-pt">{t.title}</span>
+                    <span class="wk-pn">{t.note}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

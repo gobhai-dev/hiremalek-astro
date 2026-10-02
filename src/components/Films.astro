@@ -1,0 +1,48 @@
+---
+// Each poster opens its own film dialog. The player inside is a thumbnail tile; with video.ts loaded, opening the
+// dialog starts the film straight away, and closing it stops it.
+import films from '../data/films.json';
+import Photo from './Photo.astro';
+import YouTube from './YouTube.astro';
+---
+
+<section id="films" class="sec-films">
+  <div class="films-glow"></div>
+  <div class="wrap films-inner">
+    <div class="head">
+      <div class="eyebrow rv">Films</div>
+      <h2 class="t-h2 rv s1">Stories told at full length.</h2>
+      <p class="lead on-dark rv s2">A documentary trilogy co-directed with Jeremy Seifert, about plants, healing and the families who fought for access.</p>
+    </div>
+    <div class="films">
+      {
+        films.map((f, i) => (
+          <button type="button" class="poster rv" commandfor={`film-${i}`} command="show-modal" data-autoplay={f.yt}>
+            <span class="ph g-night poster-img">
+              <Photo img={f.img} sizes="(max-width: 1240px) 32vw, 380px" />
+              <span class="play" aria-hidden="true">▶</span>
+            </span>
+            <span class="stack-s">
+              <span class="film-title">{f.title}</span>
+              <span class="film-meta">{f.meta}</span>
+            </span>
+          </button>
+        ))
+      }
+    </div>
+  </div>
+  {
+    films.map((f, i) => (
+      <dialog id={`film-${i}`} class="modal" closedby="any" aria-labelledby={`film-${i}-h`}>
+        <div class="modal-head">
+          <div>
+            <div class="film-title" id={`film-${i}-h`}>{f.title}</div>
+            <div class="film-meta">{f.meta}</div>
+          </div>
+          <button type="button" class="pill light sm" commandfor={`film-${i}`} command="close">Close</button>
+        </div>
+        <YouTube id={f.yt} title={f.title} g="player" class="player" />
+      </dialog>
+    ))
+  }
+</section>

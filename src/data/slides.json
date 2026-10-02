@@ -1,0 +1,52 @@
+[
+  {
+    "kind": "Video ad",
+    "title": "Trust the Earth",
+    "note": "Charlotte's Web brand campaign.",
+    "g": "gold",
+    "yt": "TqGqd0ke1Xg"
+  },
+  {
+    "kind": "Graphic",
+    "title": "Igniton launch",
+    "note": "Social launch for the new brand identity.",
+    "g": "stone",
+    "img": {
+      "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaef87ad009cdb337f3c16_Igniton%20launch.jpg",
+      "alt": "Igniton launch social graphic",
+      "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaef87ad009cdb337f3c16_Igniton%20launch-p-500.jpg 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaef87ad009cdb337f3c16_Igniton%20launch-p-800.jpg 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaef87ad009cdb337f3c16_Igniton%20launch.jpg 1080w"
+    }
+  },
+  {
+    "kind": "Video ad",
+    "title": "Creator spotlight",
+    "note": "UGC from the Igniton creator program.",
+    "g": "clay",
+    "yt": "_8RpDExmQtU"
+  },
+  {
+    "kind": "Graphic",
+    "title": "AJNA raise",
+    "note": "Retail investor campaign creative.",
+    "g": "earth",
+    "img": {
+      "src": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaef081f4beb06c5b8c7b1_Graphic%20AJNA%20raise.webp",
+      "alt": "AJNA BioSciences raise campaign graphic",
+      "srcset": "https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaef081f4beb06c5b8c7b1_Graphic%20AJNA%20raise-p-500.webp 500w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaef081f4beb06c5b8c7b1_Graphic%20AJNA%20raise-p-800.webp 800w, https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/6abaef081f4beb06c5b8c7b1_Graphic%20AJNA%20raise.webp 1080w"
+    }
+  },
+  {
+    "kind": "Video ad",
+    "title": "Charlotte's Web holiday campaign",
+    "note": "Highlighting bundles and deals for the holiday season.",
+    "g": "moss",
+    "yt": "UexRrbKM1yA"
+  },
+  {
+    "kind": "Video ad",
+    "title": "IgniREM Sleep",
+    "note": "AI generated ad for IgniREM Sleep.",
+    "g": "night",
+    "yt": "_pPk8-pCDzU"
+  }
+]

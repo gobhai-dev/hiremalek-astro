@@ -1,0 +1,78 @@
+---
+// The six case studies, each a native modal dialog opened by the Work section's invoker buttons.
+// closedby="any" lets a click on the backdrop close it where supported; Escape and the Close button work everywhere.
+import cases from '../data/cases.json';
+import Media from './Media.astro';
+import YouTube from './YouTube.astro';
+---
+
+{
+  cases.map((c) => (
+    <dialog id={`case-${c.id}`} class="case-modal" closedby="any" aria-labelledby={`case-${c.id}-h`}>
+      <div class="case-bar">
+        <div class="eyebrow">Case study</div>
+        <button type="button" class="pill dark sm" commandfor={`case-${c.id}`} command="close">Close</button>
+      </div>
+      <div class="case">
+        <div class="case-head">
+          <div class="eyebrow">{c.eyebrow}</div>
+          <h2 class="t-h2" id={`case-${c.id}-h`}>{c.heading}</h2>
+          <p class="lead muted">{c.lead}</p>
+        </div>
+        <div class="case-facts">
+          {c.facts.map((f) => (
+            <div class="case-fact">
+              <div class="fact-k">{f.k}</div>
+              <p class="t-body" set:html={f.v} />
+            </div>
+          ))}
+        </div>
+        {c.blocks.map((b) =>
+          b.type === 'moment' ? (
+            <div class:list={['moment', { flip: b.flip }]}>
+              <Media item={b.media} class="moment-img" sizes="(max-width: 1000px) 92vw, 620px" />
+              <div class="moment-text">
+                <div class="moment-num">{b.num}</div>
+                <h3 class="t-h3">{b.heading}</h3>
+                <p class="lead muted" set:html={b.text} />
+              </div>
+            </div>
+          ) : (
+            <div class="case-work">
+              <div class="eyebrow">{b.label}</div>
+              <div class="gallery">
+                {b.gallery.map((g) => (
+                  <Media item={g} class={`gi gi-${g.size}`} sizes={g.size === 'wide' ? '(max-width: 1120px) 92vw, 1030px' : g.size === 'half' ? '(max-width: 1000px) 92vw, 510px' : '(max-width: 1000px) 30vw, 340px'} />
+                ))}
+              </div>
+              {b.rails.map((r) => (
+                <div class="stack-s">
+                  <div class="eyebrow">{r.label}</div>
+                  <div class="rail-wrap">
+                    <div class="rail">
+                      {r.tiles.map((t) => (
+                        <div class="tile">
+                          {t.yt ? <YouTube id={t.yt} title={t.title} g={t.g} class="tile-img" /> : <Media item={t} class="tile-img" sizes="300px" />}
+                          <div class="stack-s" set:html={t.caption} />
+                        </div>
+                      ))}
+                    </div>
+                    <div class="rail-blur rail-blur-l" aria-hidden="true"><i /><i /><i /></div>
+                    <div class="rail-blur rail-blur-r" aria-hidden="true"><i /><i /><i /></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )
+        )}
+        {c.chips && (
+          <div class="chips">
+            {c.chips.map((ch) => (
+              <div class="chip">{ch}</div>
+            ))}
+          </div>
+        )}
+      </div>
+    </dialog>
+  ))
+}

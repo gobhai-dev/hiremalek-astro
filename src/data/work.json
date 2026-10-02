@@ -1,0 +1,320 @@
+[
+  {
+    "num": "01",
+    "name": "Charlotte's Web",
+    "role": "Founding team",
+    "case": "cw",
+    "cta": "See the Charlotte's Web story",
+    "heading": "The story came first.",
+    "summary": "I was the entire marketing department until 2016, then built and led the in-house creative and marketing team as the company grew and went public.",
+    "results": [
+      {
+        "big": "$15M to $96M",
+        "label": "Annual revenue"
+      },
+      {
+        "big": "C$115M",
+        "label": "IPO, 2018"
+      },
+      {
+        "big": "#1",
+        "label": "In food, drug and mass retail, per Nielsen"
+      }
+    ],
+    "next": "Next: Igniton",
+    "hero": {
+      "img": {
+        "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6abad2631aad20bab4332c0f_Trust-the-earth-FILM%20STILL-p-1600.webp",
+        "alt": "Still from the Trust the Earth hero film for Charlotte's Web"
+      },
+      "tag": "Film",
+      "title": "Trust the Earth",
+      "note": "Grand Clio 2020, 750M+ earned impressions"
+    },
+    "thumbs": [
+      {
+        "img": {
+          "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6ab5f51ce1ecabf9276e73ef_SearchingForAnswers-Trailer.jpg",
+          "alt": "Searching for Answers, series trailer"
+        },
+        "tag": "Series",
+        "title": "Searching for Answers",
+        "note": "Education series, trailer and four episodes"
+      },
+      {
+        "img": {
+          "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6ab56e324ef25e13a442644c_Adweek_Best_Cannabis_Marketing_Campaign-p-800.webp",
+          "alt": "Charlotte's Web campaign named Adweek's Best Cannabis Marketing Campaign, 2019"
+        },
+        "tag": "Campaign",
+        "title": "Adweek Best Cannabis Marketing Campaign",
+        "note": "2019"
+      }
+    ]
+  },
+  {
+    "num": "02",
+    "name": "Igniton",
+    "role": "Interim VP Creative",
+    "case": "ign",
+    "cta": "See the Igniton story",
+    "heading": "Four agencies. One story.",
+    "summary": "I direct paid media, social, email and web agencies under one creative direction, and designed the brand identity and website they work from.",
+    "results": [
+      {
+        "big": "+326%",
+        "label": "Order fulfillments year over year"
+      },
+      {
+        "big": "+29%",
+        "label": "Customer retention year over year"
+      },
+      {
+        "big": "40+",
+        "label": "Creators in a program built from zero"
+      }
+    ],
+    "next": "Next: AJNA BioSciences",
+    "hero": {
+      "img": {
+        "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6ab5eb2c17b9e5b0b6874b57_e5e73256dcea3d299d05b6d3b71f0013_Igniton-IDENTITY-p-1600.jpg",
+        "alt": "Igniton brand identity"
+      },
+      "tag": "Brand",
+      "title": "Brand identity and website",
+      "note": "A new visual system, designed and launched"
+    },
+    "thumbs": [
+      {
+        "img": {
+          "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6ab5eb3621bb9eb22bb9a814_Igniton-CREATOR-CONTENT-p-800.webp",
+          "alt": "Igniton creator content"
+        },
+        "tag": "Creators",
+        "title": "Creator content",
+        "note": "UGC from the creator program"
+      },
+      {
+        "img": {
+          "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6ab5eb2dae02f300d8d1d917_e5ed0d3bc2491db89d295e36dba94d14_igniton-AI-system-p-800.png",
+          "alt": "Igniton AI prompt library and workflow"
+        },
+        "tag": "System",
+        "title": "AI prompt library",
+        "note": "A framework for the whole team"
+      }
+    ]
+  },
+  {
+    "num": "03",
+    "name": "AJNA BioSciences",
+    "role": "Head of Creative and Communications",
+    "case": "ajna",
+    "cta": "See the AJNA BioSciences story",
+    "heading": "Making science something people want to invest in.",
+    "summary": "Founding team. I lead creative, marketing and communications for a botanical drug company raising capital from institutions and everyday investors.",
+    "results": [
+      {
+        "big": "$3.1M+",
+        "label": "Raised from retail investors"
+      },
+      {
+        "big": "$24",
+        "label": "Raised per ad dollar, under 1% marketing spend"
+      },
+      {
+        "big": "$30M",
+        "label": "Growth funding supported by investor presentations"
+      }
+    ],
+    "next": "Next: Realm of Caring",
+    "hero": {
+      "img": {
+        "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6abaae4000de4869afb506f4_5d4bd0408f4c4db7a97ae7b675483e35_Ajna_CAMPAIGN-p-1600.webp",
+        "alt": "AJNA BioSciences retail investor campaign"
+      },
+      "tag": "Campaign",
+      "title": "Retail investor campaign",
+      "note": "On WeFunder and StartEngine"
+    },
+    "thumbs": [
+      {
+        "img": {
+          "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6abaae40512e1422b22af180_ajna-INVESTOR%20PRESENTATION-p-800.webp",
+          "alt": "AJNA BioSciences investor presentation"
+        },
+        "tag": "Deck",
+        "title": "Investor presentations",
+        "note": "Supporting $30M in growth funding"
+      },
+      {
+        "img": {
+          "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6abaafbdeebd3a770f40b711_ajna-BRAND%20WORK-p-800.webp",
+          "alt": "AJNA BioSciences brand work"
+        },
+        "tag": "Brand",
+        "title": "Brand work",
+        "note": "Identity and communications"
+      }
+    ]
+  },
+  {
+    "num": "04",
+    "name": "Realm of Caring",
+    "role": "Art Director",
+    "case": "roc",
+    "cta": "See the Realm of Caring story",
+    "heading": "Telling health stories with care.",
+    "summary": "I produced patient video testimonials and led fundraising, so families could tell their own stories to lawmakers and researchers.",
+    "results": [
+      {
+        "big": "22",
+        "label": "States where advocacy helped advance CBD legalization"
+      },
+      {
+        "big": "$1M+",
+        "label": "Raised for a Johns Hopkins research partnership"
+      },
+      {
+        "big": "Bronze",
+        "label": "Clio Cannabis, Rock the RoC documentary, 2022"
+      }
+    ],
+    "next": "Next: Oswego Creative",
+    "hero": {
+      "img": {
+        "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6abab951695cb95fa8c96680_TESTIMONIAL%20STILL.jpg",
+        "alt": "Realm of Caring patient testimonial"
+      },
+      "tag": "Film",
+      "title": "Three families' stories",
+      "note": "Patient testimonials, told with care"
+    },
+    "thumbs": [
+      {
+        "img": {
+          "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6abad82dc1fcbece3a6a83b6_FAMILY%20SEGMENT%20STILL-p-800.webp",
+          "alt": "Charlotte Figi's family segment from the Rock the RoC concert"
+        },
+        "tag": "Film",
+        "title": "Rock the RoC",
+        "note": "Charlotte Figi memorial and benefit concert"
+      },
+      {
+        "img": {
+          "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6abab951771d830c8243cfd7_ADVOCACY-p-800.webp",
+          "alt": "Realm of Caring advocacy work"
+        },
+        "tag": "Advocacy",
+        "title": "Advocacy",
+        "note": "Supporting the push for legalization"
+      }
+    ]
+  },
+  {
+    "num": "05",
+    "name": "Oswego Creative",
+    "role": "Senior Producer",
+    "case": "osw",
+    "cta": "See the Oswego Creative story",
+    "heading": "Live, at national scale.",
+    "summary": "National campaigns and live events where there is no second take, including the IBEW Annual Conference in Washington, DC.",
+    "results": [
+      {
+        "big": "2024",
+        "label": "IBEW Annual Conference, co-produced"
+      },
+      {
+        "big": "50+",
+        "label": "National campaigns delivered"
+      },
+      {
+        "big": "15%",
+        "label": "Lower production costs from new workflows"
+      }
+    ],
+    "next": "Next: 35 FILM",
+    "hero": {
+      "img": {
+        "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6abac86d16c410253236339e_CONFERENCE%20STAGE.jpg",
+        "alt": "IBEW Annual Conference stage, Washington, DC"
+      },
+      "tag": "Event",
+      "title": "IBEW Annual Conference",
+      "note": "Washington, DC, 2024"
+    },
+    "thumbs": [
+      {
+        "img": {
+          "src": "https://i.ytimg.com/vi/TuEznO-7Gz4/mqdefault.jpg",
+          "alt": "IBEW Annual Conference opening film"
+        },
+        "tag": "Film",
+        "title": "Conference opening film",
+        "note": "IBEW Annual Conference, 2024"
+      },
+      {
+        "img": {
+          "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6abac86d1927ac26ce70338e_OswegoCreative_CAMPAIGN-p-800.jpg",
+          "alt": "Oswego Creative campaign work"
+        },
+        "tag": "Campaign",
+        "title": "National campaigns",
+        "note": "Films for national clients and events"
+      }
+    ]
+  },
+  {
+    "num": "06",
+    "name": "35 FILM",
+    "role": "Founder, est. 2014",
+    "case": "film",
+    "cta": "See the 35 FILM story",
+    "heading": "My own studio.",
+    "summary": "Documentaries, client films and photography, and now AI-assisted ad production.",
+    "results": [
+      {
+        "big": "1,000",
+        "label": "Visitors on opening night at RedLine, a first in RedLine history"
+      },
+      {
+        "big": "2014",
+        "label": "Founded, independent studio"
+      },
+      {
+        "big": "AI",
+        "label": "Assisted ads made with Higgsfield"
+      }
+    ],
+    "next": "Back to Charlotte's Web",
+    "hero": {
+      "img": {
+        "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6abae7cbbb43d2f8dc8a62a4_Klein%20Tools%20Still-p-1600.webp",
+        "alt": "Still from the Klein Tools brand film"
+      },
+      "tag": "Film",
+      "title": "Klein Tools",
+      "note": "Brand film"
+    },
+    "thumbs": [
+      {
+        "img": {
+          "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6abae7cb4823a0b93bc30d81_LightWave%20Logic%20Still-p-800.webp",
+          "alt": "Still from the Lightwave Logic brand film"
+        },
+        "tag": "Film",
+        "title": "Lightwave Logic",
+        "note": "Brand film"
+      },
+      {
+        "img": {
+          "src": "https://s3.amazonaws.com/webflow-prod-assets/6ab4733aa5ba25296ede511c/6abae7cbf4e25f59ef5bcde7_UNSEEN%20BRANDING-p-800.jpg",
+          "alt": "UNSEEN exhibition branding"
+        },
+        "tag": "Exhibition",
+        "title": "UNSEEN",
+        "note": "Photography exhibition, RedLine, Denver, 2026"
+      }
+    ]
+  }
+]

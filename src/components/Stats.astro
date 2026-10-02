@@ -1,0 +1,29 @@
+---
+import stats from '../data/stats.json';
+---
+
+<section class="sec-data">
+  <div class="wrap data-inner">
+    <div class="head">
+      <div class="eyebrow rv">What it added up to</div>
+      <h2 class="t-h2 rv s1">Stories that people felt. Numbers that moved.</h2>
+    </div>
+    <div class="stats rv s2">
+      {
+        stats.map((s, i) => (
+          <div class="stat">
+            <div class="stat-top">
+              <span>{String(i + 1).padStart(2, '0')}</span>
+              <span class="stat-from">{s.from}</span>
+            </div>
+            <div class="num">
+              <span class="sr-only">{s.prefix + s.value + s.suffix}</span>
+              <span class="num-v" aria-hidden="true" style={`--to:${s.value}`} data-pre={s.prefix} data-suf={s.suffix} />
+            </div>
+            <p class="t-body" set:html={s.text} />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,99 @@
+/* ===== How I work (tree) =====
+   Everything here reads one number, --q2 (0 to 1 across the section), which scroll.css drives from a view timeline.
+   The tree's own progress values and each stage's visibility are derived from it with calc(), so the four stages
+   cross-fade at the quarter marks as the original's script did. Without scroll timelines --q2 stays 1: the tree is
+   drawn in full and the stages stack (see the static block at the end). */
+.sec-grow {
+  --q2: 1;
+  background: #111a15;
+  color: #f5f5f7;
+}
+.stick {
+  --s: clamp(0, var(--q2) / 0.2, 1);
+  --r: clamp(0, (var(--q2) - 0.18) / 0.22, 1);
+  --t: clamp(0, (var(--q2) - 0.4) / 0.28, 1);
+  --t2: clamp(0, (var(--q2) - 0.56) / 0.22, 1);
+  --f: clamp(0, (var(--q2) - 0.76) / 0.2, 1);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 48px;
+}
+.tree-wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tree-wrap svg {
+  width: 100%;
+  max-height: 100%;
+  overflow: visible;
+}
+.tree .ln {
+  stroke-dasharray: 1000;
+}
+.tree .roots .ln {
+  stroke-dashoffset: calc(1000 - 1000 * clamp(0, var(--r) * 5 - var(--k), 1));
+}
+.tree .branches .ln {
+  stroke-dashoffset: calc(1000 - 1000 * clamp(0, var(--t) * 7 - var(--k), 1));
+}
+.tree .leaf {
+  transform-box: fill-box;
+  transform-origin: 0% 50%;
+  transform: scale(clamp(0, (var(--t2) - var(--d)) * 4, 1));
+}
+.tree .fr {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(clamp(0, (var(--f) - var(--d)) * 3.5, 1));
+  opacity: clamp(0, (var(--f) - var(--d)) * 3.5, 1);
+}
+.tree .seed {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(calc(0.5 + var(--s) * 0.5));
+  opacity: calc(1 - var(--t) * 0.7);
+}
+.tree .glowc {
+  opacity: var(--f);
+}
+.stage-col {
+  position: relative;
+}
+.stage-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.stage-top .eyebrow {
+  color: var(--glow);
+}
+.stage .lead {
+  color: #c7c7cc;
+}
+
+/* Static layout: tree drawn, stages listed */
+.sec-grow {
+  padding: clamp(96px, 11cqi, 160px) 0;
+}
+.stage-col {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.stage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.steps,
+[data-grow-cue] {
+  display: none;
+}
+@container (max-width: 1000px) {
+  .stick {
+    grid-template-columns: 1fr;
+  }
+}

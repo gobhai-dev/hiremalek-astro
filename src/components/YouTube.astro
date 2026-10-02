@@ -1,0 +1,28 @@
+---
+// A YouTube tile that loads nothing from YouTube until it is clicked. The iframe starts as a tiny inline page
+// (srcdoc) showing the thumbnail, tag and play button; the play button is a link to the real player, so a click
+// navigates the iframe to it. No script is involved; video.ts only stops playback when a tile is hidden.
+import { thumbDoc } from '../lib/youtube';
+
+interface Props {
+  id: string;
+  title?: string;
+  tag?: string;
+  g?: string;
+  class?: string;
+  [attr: string]: unknown;
+}
+const { id, title = 'Video', tag, g = 'night', class: cls = '', ...rest } = Astro.props;
+
+const doc = thumbDoc(id, title, tag);
+---
+
+<div class={`ph g-${g} ${cls}`} {...rest}>
+  <iframe
+    class="yt-frame"
+    title={title}
+    srcdoc={doc}
+    loading="lazy"
+    allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+    allowfullscreen></iframe>
+</div>

@@ -1,0 +1,45 @@
+---
+import '../styles/base.css';
+import '../styles/nav.css';
+import '../styles/opening.css';
+import '../styles/story.css';
+import '../styles/work.css';
+import '../styles/case.css';
+import '../styles/sections.css';
+import '../styles/grow.css';
+import '../styles/motion.css';
+import '../styles/scroll.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+const fav = 'https://cdn.prod.website-files.com/6ab4733aa5ba25296ede511c/';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {/* A rebuild of hiremalek.com: keep this copy out of search results and point engines at the real site */}
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="https://www.hiremalek.com/" />
+    <link rel="icon" type="image/png" sizes="32x32" href={fav + '6abb4369a32e92ea65465545_Malek_Favicon.png'} media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/png" sizes="32x32" href={fav + '6abb439b5e19e240b336fd4e_Malek_Favicon.png'} media="(prefers-color-scheme: dark)" />
+    <link rel="apple-touch-icon" sizes="180x180" href={fav + '6abb439ba9581abb81854eae_Malek_Favicon.png'} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Fira+Code:wght@400;500&display=swap"
+    />
+  </head>
+  <body>
+    <slot />
+    <script src="../scripts/video.ts"></script>
+  </body>
+</html>

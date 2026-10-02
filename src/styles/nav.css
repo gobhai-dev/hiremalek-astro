@@ -1,0 +1,313 @@
+/* ===== Nav: editorial masthead ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(250, 248, 243, 0.84);
+  backdrop-filter: saturate(160%) blur(18px);
+  -webkit-backdrop-filter: saturate(160%) blur(18px);
+  border-bottom: 1px solid rgba(29, 29, 31, 0.1);
+}
+/* Reading line: a 2px copper line along the bottom edge that fills as the page is read. --p comes from a scroll timeline (scroll.css) */
+.nav:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--accent);
+  transform-origin: left;
+  transform: scaleX(var(--p, 0));
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.nav-inner {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+/* Name set as a masthead, with a small dateline beside it behind a hairline rule */
+.brand {
+  text-decoration: none;
+  font-size: 25px;
+  letter-spacing: -0.005em;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  white-space: nowrap;
+}
+.brand:after {
+  content: "Creative Director \00B7  Filmmaker";
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8c7a68;
+  padding-left: 14px;
+  border-left: 1px solid rgba(29, 29, 31, 0.2);
+  line-height: 16px;
+}
+/* Sections as a numbered index: serif labels, copper mono numerals, a hairline that draws in on hover and stays on the section being read */
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 2.6cqi, 36px);
+  counter-reset: nav;
+  scroll-target-group: auto;
+}
+.navlinks a {
+  counter-increment: nav;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 5px;
+  text-decoration: none;
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1;
+  color: #1d1d1f;
+  padding: 12px 0 10px;
+  background: linear-gradient(currentColor, currentColor) no-repeat left bottom 6px / 0 1px;
+  transition: background-size 0.5s var(--ease), color 0.3s;
+}
+.navlinks a:before {
+  content: counter(nav, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--accent);
+  margin-top: -2px;
+}
+.navlinks a:hover {
+  background-size: 100% 1px;
+}
+/* The section being read, marked by the browser itself (scroll-target-group). Browsers without it simply show no current marker */
+.navlinks a:target-current {
+  color: var(--accent);
+  background-size: 100% 1px;
+}
+.navlinks .nav-contact {
+  display: none;
+}
+.menu-btn {
+  display: none;
+}
+/* Contact: a quiet outlined button with an arrow, filling in ink on hover */
+.nav .pill.dark {
+  background: transparent;
+  color: #1d1d1f;
+  box-shadow: inset 0 0 0 1px rgba(29, 29, 31, 0.35);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 11px 18px;
+  gap: 10px;
+  transition: background 0.35s, color 0.35s, box-shadow 0.35s;
+}
+.nav .pill.dark:after {
+  content: "\2192";
+  font-family: system-ui, sans-serif;
+  letter-spacing: 0;
+  font-size: 13px;
+  transition: transform 0.35s var(--ease);
+}
+.nav .pill.dark:hover {
+  background: #1d1d1f;
+  color: #faf8f3;
+  box-shadow: inset 0 0 0 1px #1d1d1f;
+  transform: none;
+}
+.nav .pill.dark:hover:after {
+  transform: translateX(3px);
+}
+
+/* ===== Narrow desktop: drop the dateline so the index keeps its room ===== */
+@container (max-width: 1180px) {
+  .brand:after {
+    display: none;
+  }
+  .navlinks a {
+    font-size: 18px;
+  }
+}
+@container (max-width: 1000px) {
+  .navlinks {
+    gap: 20px;
+  }
+  .navlinks a {
+    font-size: 17px;
+  }
+}
+
+/* ===== Menu mode (phones and narrow tablets): the index opens as a full-screen page =====
+   No script: "Menu" is a link to #site-menu, so the menu is open while it is the :target.
+   Following any section link changes the target, which closes the menu by itself; "Close" targets the nav, which is already in view */
+@container (max-width: 860px) {
+  /* The container can't restyle itself, so the nav height goes on its children */
+  .site > * {
+    --navh: 60px;
+  }
+  .nav-inner {
+    height: 60px;
+  }
+  .brand {
+    position: relative;
+    z-index: 2;
+    font-size: 23px;
+  }
+  .nav .pill {
+    display: none;
+  }
+  .menu-btn {
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+    min-height: 44px;
+    padding: 0 0 0 12px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #1d1d1f;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .menu-open {
+    display: inline-flex;
+  }
+  .menu-icon {
+    position: relative;
+    display: block;
+    width: 22px;
+    height: 9px;
+  }
+  .menu-icon:before,
+  .menu-icon:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1px;
+    background: currentColor;
+  }
+  .menu-icon:after {
+    top: 8px;
+  }
+  .menu-close .menu-icon:before,
+  .menu-close .menu-icon:after {
+    top: 4px;
+    transform: rotate(45deg);
+  }
+  .menu-close .menu-icon:after {
+    transform: rotate(-45deg);
+  }
+  .nav:has(#site-menu:target) .menu-open {
+    display: none;
+  }
+  .nav:has(#site-menu:target) .menu-close {
+    display: inline-flex;
+  }
+  /* While open, the bar turns solid (a blurred bar would trap the full-screen page inside it) */
+  .nav:has(#site-menu:target) {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: #faf8f3;
+  }
+  .nav:has(#site-menu:target):after {
+    opacity: 0;
+  }
+  .navlinks {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: calc(var(--navh) + 6vh) clamp(20px, 5cqi, 64px) calc(28px + env(safe-area-inset-bottom, 0px));
+    background: #faf8f3;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+    overflow: hidden;
+  }
+  /* Both menu targets already sit at the top of the screen; cancel the page's scroll-padding so targeting them never scrolls the page */
+  .navlinks,
+  .nav {
+    scroll-margin-top: calc(-1 * var(--navh));
+  }
+  .navlinks:target {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+  }
+  .navlinks a {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: clamp(34px, 10.5cqi, 52px);
+    line-height: 1.02;
+    padding: 16px 0 14px;
+    border-bottom: 1px solid rgba(29, 29, 31, 0.12);
+    background: none;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s var(--ease), transform 0.7s var(--ease), color 0.3s;
+  }
+  .navlinks a:first-child {
+    border-top: 1px solid rgba(29, 29, 31, 0.12);
+  }
+  .navlinks a:before {
+    font-size: 11px;
+    min-width: 24px;
+    margin-top: 6px;
+  }
+  .navlinks a:target-current {
+    background: none;
+  }
+  .navlinks .nav-contact {
+    display: flex;
+  }
+  .navlinks:target a {
+    opacity: 1;
+    transform: none;
+  }
+  .navlinks:target a:nth-child(1) { transition-delay: 0.08s; }
+  .navlinks:target a:nth-child(2) { transition-delay: 0.13s; }
+  .navlinks:target a:nth-child(3) { transition-delay: 0.18s; }
+  .navlinks:target a:nth-child(4) { transition-delay: 0.23s; }
+  .navlinks:target a:nth-child(5) { transition-delay: 0.28s; }
+  .navlinks:target a:nth-child(6) { transition-delay: 0.33s; }
+  /* Dateline at the foot of the menu */
+  .navlinks:after {
+    content: "Malek Asfeer \00B7  Denver, Colorado";
+    margin-top: auto;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #8c7a68;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.35s;
+  }
+  .navlinks:target:after {
+    opacity: 1;
+  }
+}
+@container (max-width: 640px) {
+  .site > * {
+    --navh: 56px;
+  }
+  .nav-inner {
+    height: 56px;
+  }
+  .brand {
+    font-size: 22px;
+  }
+}

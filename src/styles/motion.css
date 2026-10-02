@@ -1,0 +1,141 @@
+/* ===== In motion: a phone with six slides =====
+   The dots are radio buttons (arrow keys step through the slides natively). Each slide's arrows are labels for
+   its neighbours' radios. Motion.astro generates the :has(#sl-N:checked) rules that mark the current slide, caption, dot and arrows. */
+.sec-motion {
+  padding: clamp(96px, 11cqi, 160px) 0;
+  background: linear-gradient(180deg, #faf8f3, #f2efe8);
+}
+.captions {
+  display: grid;
+  padding-top: 24px;
+  border-top: 1px solid rgba(29, 29, 31, 0.12);
+}
+.cap {
+  grid-area: 1/1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s, visibility 0s linear 0.4s;
+}
+.slide-kind {
+  color: var(--accent);
+}
+.phone-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 2.4cqi, 32px);
+}
+.phone-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.phone {
+  width: 320px;
+  height: 660px;
+  border-radius: 54px;
+  background: #111;
+  padding: 12px;
+  box-shadow: 0 60px 120px -40px rgba(0, 0, 0, 0.45), inset 0 0 0 2px #2a2a2a;
+  position: relative;
+}
+.screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 43px;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+}
+.island {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 32px;
+  border-radius: 20px;
+  background: #000;
+  z-index: 3;
+}
+.slide {
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(30px) scale(0.98);
+  transition: opacity 0.6s, transform 0.6s var(--ease), visibility 0s linear 0.6s;
+}
+.arrows {
+  display: grid;
+}
+.arrow {
+  grid-area: 1/1;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-size: 22px;
+  cursor: pointer;
+  color: #1d1d1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  visibility: hidden;
+  transition: transform 0.3s;
+}
+.arrow:hover {
+  transform: scale(1.08);
+}
+.dots {
+  display: flex;
+  gap: 6px;
+}
+.dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(29, 29, 31, 0.2);
+  cursor: pointer;
+  transition: background 0.3s, width 0.3s;
+}
+.dot input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+@container (max-width: 640px) {
+  .arrow {
+    width: 48px;
+    height: 48px;
+  }
+  /* Phone centered on its own row, arrows paired below the dots */
+  .phone-stage {
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 16px;
+    row-gap: 20px;
+    width: 100%;
+  }
+  .phone-col {
+    order: -1;
+    flex: 0 0 100%;
+    align-items: center;
+  }
+  .phone {
+    width: min(280px, 78cqi);
+    height: auto;
+    aspect-ratio: 320/660;
+    margin: 0 auto;
+  }
+}
